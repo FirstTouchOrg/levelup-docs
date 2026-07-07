@@ -244,7 +244,7 @@ code {
   position: relative;
   background-image:
     linear-gradient(to bottom, rgba(10, 12, 14, 0.35), rgba(10, 12, 14, 0.15) 35%, rgba(10, 12, 14, 0.4) 75%, var(--background) 100%),
-    url('/hero-bg.jpg');
+    image-set(url('/hero-bg.webp') type('image/webp'), url('/hero-bg.jpg') type('image/jpeg'));
   background-size: cover;
   background-position: center;
 }
