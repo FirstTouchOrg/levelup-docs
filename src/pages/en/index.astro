@@ -1,0 +1,53 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const cards = [
+  {
+    href: '/en/whitepaper/',
+    tag: 'Whitepaper',
+    title: 'Project Whitepaper',
+    desc: 'The full story of LevelUp Land — our worldview, product map, and the Arena economic model. A chart drawn for every voyager.',
+  },
+  {
+    href: '/en/arena/',
+    tag: 'Arena',
+    title: 'Arena Guide',
+    desc: 'Step into the Arena and its first world, NU World: Battle Soul tickets, on-chain draws, reward tiers, Spirit endorsements, and the Epoch grand prize.',
+  },
+  {
+    href: '/en/level/',
+    tag: 'Level',
+    title: 'Growth System Guide',
+    desc: "Today's Voyage, XP and levels, streaks and growth rewards — discover how your voyager's journey levels up, one day at a time.",
+  },
+];
+---
+
+<DocsLayout title="Home" slug="" locale="en" transparentHeader>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">LEVELUP LAND · DOCS</p>
+      <h1 class="hero-title"><span class="ocean-gradient-text">The Archipelago of Growth</span></h1>
+      <p class="hero-sub">
+        Whether you're a fresh sailor boarding for the first time or a seasoned captain with many campaigns behind you,
+        this chart will carry you further on every leg of the journey.
+      </p>
+      <div class="hero-chips">
+        <span class="stat-chip">Keep Growing</span>
+        <span class="stat-chip">Partner Rewards</span>
+        <span class="stat-chip">On-Chain Arena</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {cards.map((c) => (
+      <a class="glass-card doc-card" href={c.href}>
+        <span class="doc-tag">{c.tag}</span>
+        <h2>{c.title}</h2>
+        <p>{c.desc}</p>
+        <span class="doc-cta">Set sail →</span>
+      </a>
+    ))}
+  </section>
+</DocsLayout>

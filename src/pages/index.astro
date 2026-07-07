@@ -1,0 +1,53 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+
+const cards = [
+  {
+    href: '/whitepaper/',
+    tag: 'Whitepaper',
+    title: '項目白皮書',
+    desc: 'LevelUp Land 的世界觀、產品版圖與 Arena 經濟模型全解 —— 一張寫給所有航海者的航圖。',
+  },
+  {
+    href: '/arena/',
+    tag: 'Arena',
+    title: '競技場指南',
+    desc: '走進競技板塊與它的首個世界 NU World：戰魂門票、鏈上開獎、獎勵等級、英靈擁立與紀元大獎。',
+  },
+  {
+    href: '/level/',
+    tag: 'Level',
+    title: '成長體系指南',
+    desc: '每日航行、經驗與等級、連續簽到與成長獎勵 —— 了解你的航海者之路如何一步步升級。',
+  },
+];
+---
+
+<DocsLayout title="首頁" slug="" locale="zh-hant" transparentHeader>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">LEVELUP LAND · DOCS</p>
+      <h1 class="hero-title"><span class="ocean-gradient-text">成長者的群島</span></h1>
+      <p class="hero-sub">
+        無論你是第一次登船的新水手，還是已經征戰多輪的老船長，
+        這份航圖都會陪你把每一段航程走得更遠。
+      </p>
+      <div class="hero-chips">
+        <span class="stat-chip">持續成長</span>
+        <span class="stat-chip">項目方獎勵</span>
+        <span class="stat-chip">鏈上競技</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {cards.map((c) => (
+      <a class="glass-card doc-card" href={c.href}>
+        <span class="doc-tag">{c.tag}</span>
+        <h2>{c.title}</h2>
+        <p>{c.desc}</p>
+        <span class="doc-cta">啟航閱讀 →</span>
+      </a>
+    ))}
+  </section>
+</DocsLayout>

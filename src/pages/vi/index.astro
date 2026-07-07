@@ -1,0 +1,53 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const cards = [
+  {
+    href: '/vi/whitepaper/',
+    tag: 'Whitepaper',
+    title: 'Sách trắng dự án',
+    desc: 'Toàn cảnh thế giới quan, bản đồ sản phẩm và mô hình kinh tế Arena của LevelUp Land — một tấm hải đồ dành cho mọi nhà hàng hải.',
+  },
+  {
+    href: '/vi/arena/',
+    tag: 'Arena',
+    title: 'Hướng dẫn Đấu Trường',
+    desc: 'Bước vào mảng thi đấu và thế giới đầu tiên NU World: vé Chiến Hồn, mở thưởng trên chuỗi, các bậc phần thưởng, Anh Linh suy tôn thủ lĩnh và giải thưởng lớn Kỷ Nguyên.',
+  },
+  {
+    href: '/vi/level/',
+    tag: 'Level',
+    title: 'Hướng dẫn hệ thống trưởng thành',
+    desc: 'Chuyến hải trình hôm nay, kinh nghiệm và cấp độ, điểm danh liên tục cùng phần thưởng trưởng thành — khám phá con đường thăng cấp từng bước của nhà hàng hải trong bạn.',
+  },
+];
+---
+
+<DocsLayout title="Trang chủ" slug="" locale="vi" transparentHeader>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">LEVELUP LAND · DOCS</p>
+      <h1 class="hero-title"><span class="ocean-gradient-text">Quần đảo của những người trưởng thành</span></h1>
+      <p class="hero-sub">
+        Dù bạn là thủy thủ mới lần đầu bước lên boong tàu, hay vị thuyền trưởng dạn dày đã chinh chiến bao mùa,
+        tấm hải đồ này sẽ luôn đồng hành để mỗi chặng hải trình của bạn đi xa hơn nữa.
+      </p>
+      <div class="hero-chips">
+        <span class="stat-chip">Trưởng thành bền bỉ</span>
+        <span class="stat-chip">Phần thưởng từ các dự án</span>
+        <span class="stat-chip">Thi đấu trên chuỗi</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {cards.map((c) => (
+      <a class="glass-card doc-card" href={c.href}>
+        <span class="doc-tag">{c.tag}</span>
+        <h2>{c.title}</h2>
+        <p>{c.desc}</p>
+        <span class="doc-cta">Giương buồm đọc ngay →</span>
+      </a>
+    ))}
+  </section>
+</DocsLayout>

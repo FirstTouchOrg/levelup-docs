@@ -1,0 +1,155 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Hướng dẫn Đấu Trường Arena"
+  description="Hướng dẫn đầy đủ về LevelUp Land Arena (NU World): vé Chiến Hồn, mở thưởng trên chuỗi, các bậc phần thưởng, Anh Linh suy tôn thủ lĩnh và giải thưởng lớn Kỷ Nguyên."
+  slug="arena"
+  locale="vi"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · ARENA</p>
+      <h1>⚔️ Hướng dẫn Đấu Trường Arena</h1>
+      <p class="page-lede">
+        Chào mừng đến vùng biển xoáy sâu nhất của quần đảo. <strong>Arena là mảng thi đấu của LevelUp Land</strong>,
+        gồm nhiều thế giới trò chơi với chủ đề và luật chơi riêng. Thế giới đầu tiên hiện đã mở là
+        <strong>NU World</strong> — một đấu trường thử thách vận hành hoàn toàn trên BNB Smart Chain:
+        100 dũng sĩ nhập cuộc, mở thưởng ngẫu nhiên trên chuỗi, người thắng đăng quang, kẻ bại hóa thành Anh Linh
+        nhưng vẫn nắm lá phiếu định đoạt cả Kỷ Nguyên.
+        Hướng dẫn này lấy NU World làm ví dụ để trình bày lối chơi; khi thế giới mới ra mắt, luật chơi sẽ theo phần giới thiệu của thế giới tương ứng.
+      </p>
+    </header>
+
+    <blockquote>
+      <p>
+        NU World sẽ mở đồng thời nhiều chiến trường với các mức giá vé khác nhau: có sàn nhẹ nhàng 1 USDT, cũng có các chiến trường cao cấp với mệnh giá lớn hơn.
+        Luật chơi, xác suất và tỷ lệ phân bổ ở mọi sàn hoàn toàn giống nhau, tiền thưởng phóng đại tỷ lệ thuận theo giá vé.
+        <strong>Mọi con số trên trang này đều lấy sàn 1 USDT làm ví dụ.</strong>
+      </p>
+    </blockquote>
+
+    <h2>Bắt đầu nhanh: Năm bước nhập cuộc</h2>
+    <ol>
+      <li><strong>Liên kết ví</strong> — Vào trung tâm cá nhân để liên kết địa chỉ ví BSC của bạn, và đảm bảo trong ví có đủ USDT (kèm một chút BNB làm phí giao dịch trên chuỗi).</li>
+      <li><strong>Chọn chiến trường</strong> — Vào <code>/arena</code>, chọn một sàn đang "mở bán vé" (các chiến trường với giá vé khác nhau sẽ mở cùng lúc). Thẻ sàn đấu hiển thị giá vé, tiến độ hiện tại (ví dụ "87/100 đã nhập cuộc") và vị trí của vòng này trong Kỷ Nguyên (ví dụ "Trận 3 / 11").</li>
+      <li><strong>Mua Chiến Hồn</strong> — Mua vé vòng đấu theo giá vé của sàn đó. Mỗi địa chỉ mỗi vòng chỉ được mua 1 vé. Mua thành công, bạn sẽ nhận một NFT trên chuỗi mang tên "Chiến Hồn" (Battle Soul).</li>
+      <li><strong>Chờ mở thưởng</strong> — Khi 100 vé bán hết, hệ thống gửi yêu cầu số ngẫu nhiên đến Chainlink VRF và hoàn tất mở thưởng. Bạn có thể theo dõi trạng thái bất cứ lúc nào trong "Kho của tôi".</li>
+      <li><strong>Hé lộ số phận</strong> — Sau khi mở thưởng, nhận (Claim) kết quả Chiến Hồn của bạn: NFT sẽ hé lộ tầng bậc số phận cùng hình tượng Anh Linh, tiền thưởng về ví ngay lập tức.</li>
+    </ol>
+
+    <h2>Luật chơi cốt lõi của NU World</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Hạng mục</th><th>Nội dung</th></tr></thead>
+      <tbody>
+        <tr><td>Số vé mỗi vòng</td><td>100 vé, bán hết là khóa sổ</td></tr>
+        <tr><td>Giá vé</td><td>Tùy theo sàn (ví dụ sàn nhẹ nhàng 1 USDT, sàn cao cấp mệnh giá lớn hơn), thanh toán bằng USDT trên chuỗi BSC</td></tr>
+        <tr><td>Giới hạn mua</td><td>Mỗi địa chỉ mỗi vòng 1 vé</td></tr>
+        <tr><td>Thời hạn bán vé</td><td>24 giờ kể từ khi mở vòng</td></tr>
+        <tr><td>Chưa bán hết</td><td>Hủy cả vòng, hoàn tiền toàn bộ theo giá vé</td></tr>
+        <tr><td>Cách mở thưởng</td><td>Số ngẫu nhiên khả kiểm chứng Chainlink VRF v2.5 + xáo trộn Fisher–Yates</td></tr>
+        <tr><td>Kỷ Nguyên</td><td>Cứ 11 vòng hợp thành một Kỷ Nguyên, tất toán giải thưởng lớn Kỷ Nguyên và đăng quang Đại Tù Trưởng</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Các bậc phần thưởng: Toàn cảnh số phận của bạn</h2>
+    <p>Sau khi mở thưởng mỗi vòng, 100 dũng sĩ được chia ngẫu nhiên vào năm tầng bậc số phận (tiền thưởng lấy sàn 1 USDT làm ví dụ, bội số hoàn vốn áp dụng chung mọi sàn):</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Số phận</th><th>Số người</th><th>Xác suất</th><th>Tiền thưởng</th><th>Bội số hoàn vốn</th></tr></thead>
+      <tbody>
+        <tr><td>👑 Quân Lâm Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td></tr>
+        <tr><td>🚩 Thủ lĩnh cầm cờ Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td></tr>
+        <tr><td>🏅 Thủ lĩnh vinh quang Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td></tr>
+        <tr><td>🛡️ Tộc nhân sống sót Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td></tr>
+        <tr><td>⚰️ Dũng sĩ ngã xuống Fallen</td><td>44</td><td>44%</td><td>0 (nhận quyền lựa chọn của Anh Linh)</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Mỗi vòng trao tổng cộng <strong>90.25%</strong> quỹ vé làm tiền thưởng (sàn 1 USDT tức 90.25 USDT), <strong>56% người tham gia</strong> nhận được USDT.</li>
+      <li>Ngoài ra <strong>5%</strong> quỹ vé được rót vào quỹ giải thưởng lớn Kỷ Nguyên, <strong>4.75%</strong> là phần giữ lại của nền tảng (trong đó một phần được rót vào Quỹ Khích Lệ Trưởng Thành, hoàn lại cho người dùng bền bỉ trưởng thành trong <a href="/vi/level/">Level</a>).</li>
+      <li>Quân Lâm và các thủ lĩnh còn được ghi danh lên "Bảng Suy Tôn" của vòng đấu, đủ tư cách tranh giải thưởng lớn Kỷ Nguyên và ngai vàng Đại Tù Trưởng.</li>
+    </ul>
+
+    <h2>Dũng sĩ ngã xuống: Lựa chọn của Anh Linh</h2>
+    <p>
+      Ở NU World, ngã xuống không phải là hồi kết. Chiến Hồn của 44 dũng sĩ ngã xuống sẽ hóa thành <strong>Anh Linh</strong>,
+      và mỗi Anh Linh phải đưa ra một lựa chọn <strong>không thể đảo ngược</strong> (chọn một trong hai):
+    </p>
+    <h3>🔥 Luyện hồn</h3>
+    <p>
+      Nung đúc Anh Linh thành <strong>Kim Cương Niệm Lực</strong> (Mind Crystals) — tài nguyên nội sinh của hệ sinh thái NU World, dùng để cường hóa NFT, tiến hóa nhân vật và
+      các lối chơi đặc biệt theo mùa giải. Lưu ý: Kim Cương Niệm Lực không thể quy đổi ngược về USDT.
+    </p>
+    <h3>🗳️ Suy tôn thủ lĩnh</h3>
+    <p>
+      Dồn lá phiếu duy nhất của bạn (trọng số 1.0) cho bất kỳ thủ lĩnh nào trên Bảng Suy Tôn của vòng đấu. Phiếu bầu được lưu chứng trên chuỗi,
+      một khi đã bỏ thì <strong>không thể sửa, không thể rút lại</strong>. Lá phiếu của bạn sẽ được cộng dồn vào trận đăng quang Đại Tù Trưởng ở chung cuộc Kỷ Nguyên —
+      hơn nữa, các Anh Linh tham gia suy tôn còn có cơ hội chia sẻ giải thưởng lớn Kỷ Nguyên (xem bên dưới).
+    </p>
+
+    <h2>Giải thưởng lớn Kỷ Nguyên và lễ đăng quang Đại Tù Trưởng</h2>
+    <p>
+      Cứ 11 vòng hợp thành một <strong>Kỷ Nguyên (Epoch)</strong>. 5% quỹ vé mỗi vòng được rót vào quỹ giải thưởng lớn
+      (sàn 1 USDT tức mỗi vòng 5 USDT), quỹ giải thưởng lớn Kỷ Nguyên tích lũy đến
+      <strong>55 USDT</strong> và được tất toán khi Kỷ Nguyên khép lại:
+    </p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Đối tượng phân chia</th><th>Tỷ lệ</th><th>Số tiền</th></tr></thead>
+      <tbody>
+        <tr><td>Các thủ lĩnh trên Bảng Suy Tôn</td><td>90%</td><td>49.5 USDT</td></tr>
+        <tr><td>Người bỏ phiếu suy tôn (rút thăm ngẫu nhiên khoảng 1% Anh Linh may mắn)</td><td>10%</td><td>5.5 USDT</td></tr>
+      </tbody>
+    </table></div>
+    <p>
+      Chung cuộc Kỷ Nguyên, thủ lĩnh có số phiếu suy tôn cao nhất đăng quang <strong>Đại Tù Trưởng (Grand Chieftain)</strong>,
+      tên tuổi được khắc ghi vĩnh viễn trong biên niên sử NU World.
+    </p>
+
+    <h2>Nhận thưởng, hoàn tiền và các thao tác thường gặp</h2>
+    <h3>Nhận tiền thưởng</h3>
+    <ul>
+      <li>Sau khi mở thưởng, vào "Kho của tôi" và thực hiện Claim cho từng Chiến Hồn để hé lộ kết quả và nhận tiền thưởng.</li>
+      <li>Tiền thưởng chuyển thẳng vào ví ngay lập tức, <strong>không khóa, không trì hoãn chi trả</strong>; nếu giao dịch trên chuỗi tạm thời thất bại, khoản tiền sẽ được treo vào số dư chờ nhận, bạn có thể nhận lại bất cứ lúc nào.</li>
+      <li>Quyền nhận thưởng thuộc về <strong>người đang nắm giữ</strong> NFT; mỗi Chiến Hồn chỉ được nhận thưởng một lần.</li>
+    </ul>
+    <h3>Hoàn tiền</h3>
+    <ul>
+      <li>Nếu một vòng không bán hết 100 vé trong 24 giờ, vòng đó tự động vào quy trình hủy.</li>
+      <li>Người mua vé được nhận lại toàn bộ tiền vé theo đúng giá, không thiếu một xu; Chiến Hồn NFT đó sẽ chuyển sang trạng thái kỷ niệm "rương báu rỗng".</li>
+    </ul>
+
+    <h2>Giải thích về tính công bằng</h2>
+    <ul>
+      <li><strong>Số ngẫu nhiên đến từ Chainlink VRF v2.5</strong>: quá trình sinh hạt giống ngẫu nhiên cùng bằng chứng mật mã học đều được đưa lên chuỗi, ai cũng có thể kiểm chứng, nền tảng không thể biết trước hay thao túng kết quả mở thưởng.</li>
+      <li><strong>Tỷ lệ phân bổ được mã hóa cứng trong hợp đồng thông minh</strong>: các bậc tiền thưởng, khoản rót vào quỹ giải thưởng lớn, tỷ lệ giữ lại của nền tảng đều được viết chết trong hợp đồng, sau khi mở vòng không ai có thể thay đổi.</li>
+      <li><strong>Mỗi địa chỉ chỉ được mua 1 vé</strong>: đảm bảo mỗi vòng là chiến trường của 100 người tham gia thực sự.</li>
+    </ul>
+
+    <h2>Câu hỏi thường gặp FAQ</h2>
+    <h3>H: Arena và NU World quan hệ với nhau thế nào?</h3>
+    <p>
+      Arena là mảng thi đấu của nền tảng (cấp cha), quản lý nhiều thế giới trò chơi độc lập; NU World là thế giới đầu tiên chính thức mở cửa.
+      Các thế giới mới trong tương lai sẽ có chủ đề và tham số kinh tế riêng, khi đó sẽ có hướng dẫn thế giới tương ứng.
+    </p>
+    <h3>H: Tôi cần chuẩn bị gì để tham chiến?</h3>
+    <p>Một ví BSC, đủ USDT để trả giá vé của sàn bạn chọn (sàn nhẹ nhàng từ 1 USDT), một chút BNB làm gas, và tài khoản LevelUp Land đã liên kết ví.</p>
+    <h3>H: Mua vé rồi mà mãi chưa mở thưởng thì sao?</h3>
+    <p>Mở thưởng cần chờ 100 vé của vòng bán hết. Nếu 24 giờ chưa bán hết, vòng đó bị hủy và bạn được hoàn tiền toàn bộ.</p>
+    <h3>H: Chiến Hồn NFT có chuyển nhượng được không?</h3>
+    <p>Được. Chiến Hồn là NFT tiêu chuẩn trên chuỗi, có thể chuyển nhượng trước khi nhận thưởng; quyền nhận thưởng đi theo NFT sang người đang nắm giữ.</p>
+    <h3>H: Bỏ phiếu suy tôn nhầm thì sửa được không?</h3>
+    <p>Không. Suy tôn là thao tác không thể đảo ngược trên chuỗi, hãy suy nghĩ kỹ về vị thủ lĩnh bạn muốn phò tá trước khi bỏ phiếu.</p>
+    <h3>H: Kim Cương Niệm Lực có đổi lại được USDT không?</h3>
+    <p>Không. Kim Cương Niệm Lực là tài nguyên nội sinh của hệ sinh thái, chỉ dùng cho cường hóa, tiến hóa và các lối chơi đặc biệt trong NU World.</p>
+    <h3>H: Phần vốn nền tảng giữ lại đi về đâu?</h3>
+    <p>
+      Trong khoản giữ lại 4.75% quỹ vé mỗi vòng (sàn 1 USDT tức 4.75 USDT), một phần sẽ được rót vào "Quỹ Khích Lệ Trưởng Thành",
+      dùng để tưởng thưởng những người dùng bền bỉ trưởng thành trên <a href="/vi/level/">tấm Hải Đồ Level</a> — sức nóng của thi đấu, cuối cùng quay về đáp lễ những người kiên trì trưởng thành.
+    </p>
+
+    <p class="page-note">
+      Lưu ý tham gia có chừng mực: Arena là lối chơi thi đấu trên chuỗi, kết quả mỗi vòng do số ngẫu nhiên khả kiểm chứng quyết định; hãy liệu sức mà chơi, và tận hưởng chính niềm vui của cuộc đấu trí cùng câu chuyện.
+    </p>
+  </article>
+</DocsLayout>

@@ -1,0 +1,530 @@
+---
+import '../styles/global.css';
+import { LOCALES, UI, DEFAULT_LOCALE, localePath, type LocaleCode } from '../i18n';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** 當前頁面 slug：'' | 'whitepaper' | 'arena' | 'level'，供導航高亮與語言切換定位 */
+  slug?: string;
+  locale?: LocaleCode;
+  /** 首頁 hero 場景：導航預設透明疊加在背景圖上，滾動後浮出毛玻璃底 */
+  transparentHeader?: boolean;
+}
+
+const {
+  title,
+  slug = '',
+  locale = DEFAULT_LOCALE,
+  transparentHeader = false,
+} = Astro.props;
+
+const meta = LOCALES[locale];
+const ui = UI[locale];
+const description = Astro.props.description ?? ui.description;
+
+const nav = [
+  { slug: '', label: ui.nav.home },
+  { slug: 'whitepaper', label: ui.nav.whitepaper },
+  { slug: 'arena', label: ui.nav.arena },
+  { slug: 'level', label: ui.nav.level },
+];
+---
+
+<html lang={meta.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Unbounded:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · {ui.siteName}</title>
+  </head>
+  <body>
+    <header class:list={['site-header', { overlay: transparentHeader }]}>
+      <a class="brand" href={localePath(locale, '')}>
+        <svg class="brand-mark" viewBox="0 0 602 743" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M476.259 392.918C476.322 393.052 476.431 393.159 476.565 393.222C476.7 393.284 476.852 393.297 476.995 393.26C477.138 393.222 477.264 393.135 477.35 393.015C477.437 392.895 477.478 392.748 477.468 392.6V144.046C477.466 143.759 477.403 143.476 477.284 143.216C477.166 142.956 476.993 142.724 476.779 142.537C476.565 142.35 476.314 142.212 476.043 142.132C475.772 142.051 475.487 142.031 475.208 142.072C399.636 152.577 332.627 185.142 273.417 233.02C256.163 246.984 241.478 262.434 229.36 279.369C229.154 279.659 229.035 280 229.016 280.355C228.997 280.71 229.079 281.062 229.252 281.372C229.426 281.682 229.683 281.936 229.995 282.106C230.307 282.275 230.661 282.353 231.015 282.33C249.065 281.056 271.857 278.828 289.779 281.247C302.555 282.945 316.572 285.81 331.831 289.842C332.089 289.91 332.325 290.041 332.519 290.224C332.713 290.407 332.858 290.636 332.94 290.89C333.022 291.143 333.04 291.413 332.991 291.675C332.941 291.937 332.827 292.182 332.659 292.389C321.729 305.886 311.744 319.744 302.703 333.963C249.606 417.387 209.655 506.128 182.851 600.185C182.594 601.103 182.04 601.911 181.276 602.486C180.511 603.06 179.577 603.37 178.617 603.368H2.16558C1.87587 603.368 1.58901 603.31 1.32214 603.197C1.05528 603.085 0.813857 602.919 0.611994 602.712C0.410132 602.504 0.25201 602.258 0.147047 601.988C0.0420836 601.718 -0.00758383 601.429 0.00093694 601.14C2.12316 516.909 19.1857 434.981 51.1887 355.355C97.3151 240.628 179.509 142.645 286.978 81.8754C316.71 65.0992 353.287 46.6041 389.959 34.7303C458.379 12.5319 528.136 0.955184 599.231 0.000185178C599.593 -0.00402656 599.952 0.063644 600.288 0.199337C600.624 0.335031 600.929 0.536038 601.187 0.790674C601.445 1.04531 601.649 1.34854 601.789 1.68278C601.928 2.01702 602 2.37559 602 2.7378V601.363C602 601.869 601.802 602.355 601.45 602.713C601.098 603.071 600.62 603.273 600.122 603.273H388.621C387.626 603.273 386.653 603.559 385.817 604.095C384.982 604.631 384.32 605.395 383.91 606.297L322.217 741.747C322.081 742.045 321.854 742.291 321.568 742.449C321.281 742.608 320.952 742.67 320.628 742.627C320.303 742.585 320.001 742.439 319.766 742.212C319.531 741.985 319.375 741.688 319.321 741.365C306.014 662.865 311.744 583.059 329.093 504.59C336.192 472.374 351.727 425.866 359.08 403.041C367.59 376.598 379.21 348.903 393.938 319.956C394.146 319.546 394.437 319.183 394.792 318.89C395.147 318.596 395.56 318.379 396.004 318.25C396.448 318.122 396.915 318.086 397.375 318.144C397.836 318.202 398.28 318.353 398.681 318.588C428.732 336.223 458.559 362.04 476.259 392.918Z" fill="#24D0FA"/>
+        </svg>
+        <span class="brand-name">LevelUp <em>Land</em></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav">
+        {nav.map((item) => (
+          <a href={localePath(locale, item.slug)} class:list={['nav-link', { active: slug === item.slug }]}>{item.label}</a>
+        ))}
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" data-lang-switch>
+          <button class="lang-trigger" type="button" aria-label="Language" aria-haspopup="listbox" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z" />
+            </svg>
+            <span>{meta.label}</span>
+          </button>
+          <div class="lang-menu" role="listbox" aria-label="Language">
+            {Object.values(LOCALES).map((l) => (
+              <a
+                class:list={['lang-option', { active: l.code === locale }]}
+                href={localePath(l.code, slug)}
+                role="option"
+                aria-selected={l.code === locale ? 'true' : 'false'}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="waves" aria-hidden="true">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <path d="M0,30 C150,55 300,5 450,30 C600,55 750,5 900,30 C1050,55 1200,5 1350,30 L1350,60 L0,60 Z" fill="rgba(36,208,250,0.06)"></path>
+          <path d="M0,38 C180,60 360,16 540,38 C720,60 900,16 1080,38 C1260,60 1440,16 1620,38 L1620,60 L0,60 Z" fill="rgba(36,208,250,0.04)"></path>
+        </svg>
+      </div>
+      <p class="footer-tagline">{ui.footerTagline}</p>
+      <p class="footer-sub">LevelUp Land · {ui.footerSub} · <a href="https://levelup.land">levelup.land</a></p>
+    </footer>
+
+    <script>
+      const header = document.querySelector('.site-header');
+
+      // hero 場景：透明懸浮，滾動後浮出毛玻璃底
+      if (header && header.classList.contains('overlay')) {
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // 移動端漢堡選單
+      const toggle = document.querySelector('.nav-toggle');
+      if (header && toggle) {
+        const setOpen = (open) => {
+          header.classList.toggle('menu-open', open);
+          document.documentElement.classList.toggle('nav-locked', open);
+          toggle.setAttribute('aria-expanded', String(open));
+        };
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setOpen(!header.classList.contains('menu-open'));
+        });
+        // 點擊選單外、選中連結或縮放到桌面寬度時自動收起
+        document.addEventListener('click', (e) => {
+          if (header.classList.contains('menu-open') && !header.contains(e.target)) setOpen(false);
+        });
+        document.querySelectorAll('.site-nav .nav-link').forEach((a) =>
+          a.addEventListener('click', () => setOpen(false)),
+        );
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') setOpen(false);
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 720) setOpen(false);
+        });
+      }
+
+      // 自訂語言下拉，避免瀏覽器原生 select 造成不可控寬度與樣式
+      const langSwitch = document.querySelector('[data-lang-switch]');
+      const langTrigger = langSwitch?.querySelector('.lang-trigger');
+      if (langSwitch && langTrigger) {
+        const setLangOpen = (open) => {
+          langSwitch.classList.toggle('open', open);
+          langTrigger.setAttribute('aria-expanded', String(open));
+        };
+
+        langTrigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setLangOpen(!langSwitch.classList.contains('open'));
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!langSwitch.contains(e.target)) setLangOpen(false);
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') setLangOpen(false);
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 12, 14, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* hero 場景：預設透明懸浮在背景圖上，滾動後浮出毛玻璃底 */
+  .site-header.overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .site-header.overlay.scrolled {
+    background: rgba(10, 12, 14, 0.85);
+    border-bottom-color: var(--border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--foreground);
+    text-decoration: none;
+    margin-right: auto;
+    flex-shrink: 0;
+  }
+
+  .brand:hover { text-decoration: none; }
+
+  .brand-mark {
+    height: 1.3rem;
+    width: auto;
+    display: inline-block;
+  }
+
+  .brand-name {
+    font-family: var(--font-unbounded);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .brand-name em {
+    font-style: normal;
+    color: var(--brand-cyan);
+  }
+
+  .header-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .lang-switch {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .lang-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    color: var(--muted-foreground);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.36rem 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .lang-trigger:hover,
+  .lang-switch.open .lang-trigger {
+    color: var(--foreground);
+    border-color: rgba(36, 208, 250, 0.3);
+    background: rgba(36, 208, 250, 0.08);
+  }
+
+  .lang-trigger svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .lang-menu {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 0;
+    z-index: 70;
+    display: grid;
+    min-width: max-content;
+    padding: 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: rgba(10, 12, 14, 0.96);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.35rem);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  .lang-switch.open .lang-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .lang-option {
+    display: flex;
+    align-items: center;
+    min-height: 2.25rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--radius);
+    color: var(--muted-foreground);
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .lang-option:hover {
+    color: var(--foreground);
+    background: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+  }
+
+  .lang-option.active {
+    color: var(--brand-cyan);
+    background: rgba(36, 208, 250, 0.08);
+  }
+
+  .site-nav {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar { display: none; }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+  }
+
+  .nav-link:hover {
+    color: var(--foreground);
+    background: rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+  }
+
+  .nav-link.active {
+    color: var(--brand-cyan);
+    background: rgba(36, 208, 250, 0.08);
+    border: 1px solid rgba(36, 208, 250, 0.2);
+  }
+
+  .nav-toggle {
+    display: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.25rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--foreground);
+    cursor: pointer;
+  }
+
+  .nav-toggle:hover {
+    border-color: rgba(36, 208, 250, 0.3);
+    background: rgba(36, 208, 250, 0.08);
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 1rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-header.menu-open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header.menu-open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.menu-open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  :global(html.nav-locked),
+  :global(html.nav-locked body) {
+    overflow: hidden;
+  }
+
+  /* 窄屏：品牌與語言切換留在頂部，導航改為可點擊的下拉面板 */
+  @media (max-width: 720px) {
+    .site-header {
+      padding: 0.6rem 1rem;
+      gap: 0.75rem;
+    }
+
+    .site-header.overlay.menu-open {
+      background: rgba(10, 12, 14, 0.92);
+      border-bottom-color: var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .site-nav {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 1rem;
+      right: 1rem;
+      order: 3;
+      display: grid;
+      gap: 0.35rem;
+      margin: 0;
+      padding: 0.55rem;
+      overflow: visible;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(10, 12, 14, 0.96);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-0.4rem);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .site-header.menu-open .site-nav {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      justify-content: flex-start;
+      min-height: 2.75rem;
+      padding: 0.55rem 0.8rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+    }
+
+    .nav-toggle {
+      display: inline-flex;
+    }
+
+    .brand-name {
+      font-size: 0.88rem;
+    }
+
+    .lang-trigger {
+      padding: 0.36rem 0.7rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .site-header {
+      padding-inline: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .brand-name {
+      max-width: clamp(5.8rem, 30vw, 9.8rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-nav {
+      left: 0.75rem;
+      right: 0.75rem;
+    }
+  }
+
+  .site-main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .site-footer {
+    position: relative;
+    text-align: center;
+    padding: 3.5rem 1.25rem 2.5rem;
+    border-top: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .waves {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 60px;
+    pointer-events: none;
+  }
+
+  .waves svg {
+    width: 130%;
+    height: 100%;
+    animation: wave-drift 7s linear infinite alternate;
+  }
+
+  .footer-tagline {
+    font-family: var(--font-unbounded);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+    margin: 0 0 0.4rem;
+  }
+
+  .footer-sub {
+    font-size: 0.75rem;
+    color: var(--faint-foreground);
+    margin: 0;
+  }
+</style>

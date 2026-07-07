@@ -1,0 +1,163 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Arena Guide"
+  description="The complete LevelUp Land Arena (NU World) gameplay guide: Battle Soul tickets, on-chain draws, reward tiers, Spirit endorsements, and the Epoch grand prize."
+  slug="arena"
+  locale="en"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · ARENA</p>
+      <h1>⚔️ Arena Guide</h1>
+      <p class="page-lede">
+        Welcome to the whirlpool waters at the deepest reach of the archipelago. <strong>Arena is
+        LevelUp Land's competitive division</strong>, made up of multiple game worlds, each with its own
+        theme and rules. The first world now open is <strong>NU World</strong> — a proving ground running
+        entirely on BNB Smart Chain: 100 warriors enter, the draw is randomized on-chain, the victors are
+        crowned, and the fallen become Spirits — yet hold the vote that decides the fate of the Epoch.
+        This guide uses NU World as its example; when new worlds open, their own rules pages will apply.
+      </p>
+    </header>
+
+    <blockquote>
+      <p>
+        NU World runs multiple battlefields at different ticket prices in parallel: a light battlefield
+        at 1 USDT, alongside high-stakes battlefields at larger amounts. Rules, odds, and distribution
+        ratios are identical across all battlefields, with prizes scaling proportionally with the ticket price.
+        <strong>All amounts on this page use the 1 USDT battlefield as the example.</strong>
+      </p>
+    </blockquote>
+
+    <h2>Quick Start: Enter in Five Steps</h2>
+    <ol>
+      <li><strong>Link your wallet</strong> — bind your BSC wallet address in your profile, and make sure it holds enough USDT (plus a small amount of BNB for on-chain gas fees).</li>
+      <li><strong>Pick a battlefield</strong> — go to <code>/arena</code> and choose a round that is "On Sale" (battlefields at different ticket prices run in parallel). Each card shows the ticket price, current progress (e.g. "87/100 entered"), and the round's position within the Epoch (e.g. "Battle 3 / 11").</li>
+      <li><strong>Buy a Battle Soul</strong> — purchase this round's ticket at that battlefield's price. Each address may buy 1 per round. Once the purchase succeeds, you receive an on-chain NFT: your Battle Soul.</li>
+      <li><strong>Wait for the draw</strong> — once all 100 tickets sell out, the system requests a random number from Chainlink VRF and completes the draw. You can check the status any time under "My Holdings".</li>
+      <li><strong>Reveal your fate</strong> — after the draw, claim your Battle Soul's result: the NFT reveals your tier of fate and your Spirit's form, and any prize lands in your wallet instantly.</li>
+    </ol>
+
+    <h2>NU World Core Rules</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Rule</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Tickets per round</td><td>100 — the round locks once sold out</td></tr>
+        <tr><td>Ticket price</td><td>Varies by battlefield (e.g. a 1 USDT light battlefield, or larger high-stakes amounts), paid in USDT on BSC</td></tr>
+        <tr><td>Purchase limit</td><td>1 per address per round</td></tr>
+        <tr><td>Sale window</td><td>24 hours from the round's opening</td></tr>
+        <tr><td>If not sold out</td><td>The entire round is cancelled and fully refunded at ticket price</td></tr>
+        <tr><td>Draw mechanism</td><td>Chainlink VRF v2.5 verifiable randomness + Fisher–Yates shuffle</td></tr>
+        <tr><td>Epoch</td><td>Every 11 rounds form an Epoch, settling the Epoch grand prize and crowning the Grand Chieftain</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Reward Tiers: Your Fates at a Glance</h2>
+    <p>After each draw, the 100 warriors are randomly assigned to five tiers of fate (prizes shown for the 1 USDT battlefield; return multiples apply across all battlefields):</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Fate</th><th>Count</th><th>Odds</th><th>Prize</th><th>Return</th></tr></thead>
+      <tbody>
+        <tr><td>👑 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td></tr>
+        <tr><td>🚩 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td></tr>
+        <tr><td>🏅 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td></tr>
+        <tr><td>🛡️ Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td></tr>
+        <tr><td>⚰️ Fallen</td><td>44</td><td>44%</td><td>0 (receives the Spirit's Choice)</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Each round pays out <strong>90.25%</strong> of the ticket pool as prizes (90.25 USDT on the 1 USDT battlefield), and <strong>56% of participants</strong> walk away with USDT.</li>
+      <li>A further <strong>5%</strong> of the pool feeds the Epoch grand prize pool, and <strong>4.75%</strong> is the platform reserve (a portion of which feeds the Growth Incentive Pool, flowing back to users who keep growing in <a href="/en/level/">Level</a>).</li>
+      <li>The Sovereign and the leaders also take their places on this round's Endorsement Board, earning the right to contend for the Epoch grand prize and the Grand Chieftain's throne.</li>
+    </ul>
+
+    <h2>The Fallen: The Spirit's Choice</h2>
+    <p>
+      In NU World, falling is not the end. The Battle Souls of the 44 Fallen become <strong>Spirits</strong>,
+      and each Spirit must make one <strong>irreversible</strong> choice (pick one of two):
+    </p>
+    <h3>🔥 Forge the Soul</h3>
+    <p>
+      Smelt your Spirit into <strong>Mind Crystals</strong> — NU World's in-ecosystem resource, usable for
+      NFT enhancement, character evolution, and special seasonal gameplay. Note: Mind Crystals cannot be
+      converted back into USDT.
+    </p>
+    <h3>🗳️ Endorse a Leader</h3>
+    <p>
+      Cast your one and only vote (weight 1.0) for any leader on this round's Endorsement Board. The vote
+      is recorded on-chain and, once cast, is <strong>final — it cannot be changed or withdrawn</strong>.
+      Your vote accumulates toward the Grand Chieftain's coronation at the Epoch's finale — and Spirits
+      who take part in the endorsement stand a chance to share in the Epoch grand prize (see below).
+    </p>
+
+    <h2>The Epoch Grand Prize and the Grand Chieftain's Coronation</h2>
+    <p>
+      Every 11 rounds form an <strong>Epoch</strong>. 5% of each round's ticket pool feeds the grand prize
+      pool (5 USDT per round on the 1 USDT battlefield), accumulating to <strong>55 USDT</strong> by the
+      Epoch's end, settled as follows:
+    </p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Recipients</th><th>Share</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Leaders on the Endorsement Board</td><td>90%</td><td>49.5 USDT</td></tr>
+        <tr><td>Endorsement voters (roughly 1% of Spirits drawn at random as the lucky winners)</td><td>10%</td><td>5.5 USDT</td></tr>
+      </tbody>
+    </table></div>
+    <p>
+      At the Epoch's finale, the leader with the most endorsement votes is crowned
+      <strong>Grand Chieftain</strong>, their name inscribed forever in the chronicles of NU World.
+    </p>
+
+    <h2>Claims, Refunds, and Common Operations</h2>
+    <h3>Claiming your prize</h3>
+    <ul>
+      <li>After the draw, go to "My Holdings" and hit Claim on each Battle Soul to reveal its result and collect the prize.</li>
+      <li>Prizes land in your wallet instantly — <strong>no lock-up, no delayed payouts</strong>. If an on-chain transfer temporarily fails, the amount is credited to your pending balance and can be claimed again at any time.</li>
+      <li>Claim rights belong to the NFT's <strong>current holder</strong>; each Battle Soul can only be claimed once.</li>
+    </ul>
+    <h3>Refunds</h3>
+    <ul>
+      <li>If a round fails to sell all 100 tickets within 24 hours, it automatically enters the cancellation process.</li>
+      <li>Buyers can reclaim the full ticket price, down to the last cent; the Battle Soul NFT becomes a commemorative "empty chest".</li>
+    </ul>
+
+    <h2>Fairness</h2>
+    <ul>
+      <li><strong>Randomness comes from Chainlink VRF v2.5</strong>: the random seed's generation and cryptographic proof live entirely on-chain, verifiable by anyone — the platform cannot foresee or manipulate the draw's outcome.</li>
+      <li><strong>Distribution ratios are hard-coded into the smart contract</strong>: prize tiers, grand prize pool contributions, and the platform reserve ratio are all locked in the contract — once a round opens, no one can change them.</li>
+      <li><strong>One ticket per address</strong>: guaranteeing every round is a battlefield of 100 real participants.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Q: What is the relationship between Arena and NU World?</h3>
+    <p>
+      Arena is the platform's competitive division (the parent), containing multiple independent game
+      worlds; NU World is the first world to officially open. Future worlds will carry their own themes
+      and economic parameters, each with a corresponding world guide.
+    </p>
+    <h3>Q: What do I need before I can join a battle?</h3>
+    <p>A BSC wallet, enough USDT to cover your chosen battlefield's ticket price (light battlefields start at 1 USDT), a small amount of BNB for gas, and a LevelUp Land account with your wallet linked.</p>
+    <h3>Q: I bought a ticket but the draw hasn't happened — what now?</h3>
+    <p>The draw waits until all 100 tickets in the round are sold. If the round doesn't sell out within 24 hours, it is cancelled and you can claim a full refund.</p>
+    <h3>Q: Can Battle Soul NFTs be transferred?</h3>
+    <p>Yes. A Battle Soul is a standard on-chain NFT and can be transferred before its prize is claimed; claim rights move with the NFT to its current holder.</p>
+    <h3>Q: I endorsed the wrong leader — can I change my vote?</h3>
+    <p>No. Endorsement is an irreversible on-chain action — choose the leader you want to champion carefully before voting.</p>
+    <h3>Q: Can Mind Crystals be converted back into USDT?</h3>
+    <p>No. Mind Crystals are an in-ecosystem resource, used only for enhancement, evolution, and special gameplay within NU World.</p>
+    <h3>Q: Where do the platform's retained funds go?</h3>
+    <p>
+      Of the 4.75% platform reserve from each round's pool (4.75 USDT on the 1 USDT battlefield), a portion
+      feeds the Growth Incentive Pool, rewarding users who keep growing along the
+      <a href="/en/level/">Level Voyage Map</a> — the heat of the Arena ultimately flows back to those who
+      persist in growing.
+    </p>
+
+    <p class="page-note">
+      A note on responsible play: Arena is on-chain competitive gameplay, and each round's outcome is
+      decided by verifiable randomness. Play within your means, and enjoy the game and its story for
+      their own sake.
+    </p>
+  </article>
+</DocsLayout>
