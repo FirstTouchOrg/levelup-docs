@@ -1,0 +1,53 @@
+﻿---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const cards = [
+  {
+    href: '/ja/whitepaper/',
+    tag: 'Whitepaper',
+    title: 'プロジェクト・ホワイトペーパー',
+    desc: 'LevelUp Land の世界観、プロダクト全体像、Arena 経済モデルをまとめた、すべての航海者のための海図。',
+  },
+  {
+    href: '/ja/arena/',
+    tag: 'Arena',
+    title: 'Arena ガイド',
+    desc: 'Arena と最初の世界 NU World へ。Battle Soul チケット、オンチェーン抽選、報酬階層、Spirit の支持、Epoch 大賞を解説します。',
+  },
+  {
+    href: '/ja/level/',
+    tag: 'Level',
+    title: '成長システムガイド',
+    desc: '今日の航海、経験値とレベル、連続チェックイン、成長報酬。航海者の旅が一日ずつ進む仕組みを紹介します。',
+  },
+];
+---
+
+<DocsLayout title="ホーム" slug="" locale="ja" transparentHeader>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">LEVELUP LAND · DOCS</p>
+      <h1 class="hero-title"><span class="ocean-gradient-text">成長者の群島</span></h1>
+      <p class="hero-sub">
+        初めて船に乗る新米の船乗りでも、幾度も航海を重ねた船長でも、
+        この海図は次の旅路をもっと遠くへ進めるための伴走者です。
+      </p>
+      <div class="hero-chips">
+        <span class="stat-chip">継続的な成長</span>
+        <span class="stat-chip">パートナー報酬</span>
+        <span class="stat-chip">オンチェーン Arena</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {cards.map((c) => (
+      <a class="glass-card doc-card" href={c.href}>
+        <span class="doc-tag">{c.tag}</span>
+        <h2>{c.title}</h2>
+        <p>{c.desc}</p>
+        <span class="doc-cta">出航して読む →</span>
+      </a>
+    ))}
+  </section>
+</DocsLayout>

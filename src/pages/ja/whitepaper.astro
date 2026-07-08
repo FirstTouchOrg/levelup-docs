@@ -1,0 +1,82 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="プロジェクト・ホワイトペーパー"
+  description="LevelUp Land ホワイトペーパー：成長者の群島、プラットフォームのビジョン、プロダクト全体像、Arena のオンチェーン経済モデル。"
+  slug="whitepaper"
+  locale="ja"
+>
+  <article class="prose">
+    <header class="wp-header">
+      <p class="wp-eyebrow">LEVELUP LAND · WHITEPAPER</p>
+      <h1 class="wp-title"><span class="ocean-gradient-text">成長者の群島</span></h1>
+      <p class="wp-sub">LevelUp Land プロジェクト・ホワイトペーパー · 2026 年 7 月</p>
+    </header>
+
+    <h2>一、出航にあたって</h2>
+    <p>誰の心にも一つの海があります。広く、未知で、嵐も宝も隠している海です。多くの人は岸辺から眺めるだけですが、中にはロープをほどき、風に向かって船を出す人もいます。</p>
+    <p><strong>LevelUp Land は、そのような人のために作られた群島です。</strong></p>
+    <p>私たちは、成長は単なるスローガンではなく、見える形で記録され、報われる航海だと考えています。毎日の継続は錨を上げる一歩であり、タスクの完了は航海勲章であり、競技は荒波に挑む試練です。</p>
+    <blockquote><p>毎日航海し、成長を重ねる。—— LevelUp Land 航海者の信条</p></blockquote>
+
+    <h2>二、解決したい課題</h2>
+    <p>この時代に不足しているのは機会ではなく、<strong>継続</strong>です。イベントは始まり、終わり、ユーザーの努力は分断され、忠誠は蓄積されにくいのが現状です。プロジェクト側も、一度きりの流入ではなく長期的に歩むユーザーを必要としています。</p>
+    <p>LevelUp Land の答えは、<strong>「成長」をすべてを貫く主軸にすること</strong>です。</p>
+    <ul>
+      <li><strong>ユーザーへ</strong>：チェックイン、タスク、競技のすべてが同じ成長曲線に積み上がります。</li>
+      <li><strong>プロジェクトへ</strong>：レベル、履歴、活発度を持つ成長型ユーザーへ、より正確に報酬を届けられます。</li>
+      <li><strong>プラットフォームへ</strong>：競技で保留された資金の一部を成長インセンティブとして戻し、参加、成長、報酬、再参加の循環を作ります。</li>
+    </ul>
+
+    <h2>三、群島を構成する 3 つのプロダクト</h2>
+    <h3>⛵ Level · 航海者の道</h3>
+    <p>Level は主航路です。8 つの島が Lv.1 から Lv.8 まで並び、毎日の「今日の航海」で進捗が進みます。30 回の航海で次の島へ到達し、継続によって報酬レアリティも高まります。</p>
+    <h3>🗺️ Quest · 懸賞ギルド</h3>
+    <p>プロジェクトが提供するタスクが集まる補給港です。フォロー、参加、体験、創作などの任務を完了すると、パートナー報酬と成長ポイントを獲得できます。</p>
+    <h3>⚔️ Arena · 勇気の試練場</h3>
+    <p>Arena は複数のゲーム世界からなる競技エリアです。最初の世界は <strong>NU World</strong>。100 名が参加し、オンチェーン乱数で運命が決まり、敗者は Spirit として Epoch の結末を左右します。</p>
+
+    <h2>四、Arena 経済モデル：NU World の例</h2>
+    <p>NU World は BNB Smart Chain 上で動作し、USDT で決済されます。設計の中心は、<strong>透明なルール、高い資金還元率、単発の運より長期的な駆け引き</strong>です。</p>
+    <h3>4.1 遊び方の概要</h3>
+    <p>各ラウンドでは 100 名が Battle Soul NFT を購入します（1 アドレスにつき各ラウンド 1 枚まで）。完売後、Chainlink VRF v2.5 による乱数で階層が決まり、11 ラウンドで 1 Epoch が形成されます。未完売のラウンドは 24 時間後にキャンセルされ、全額返金されます。操作手順は <a href="/ja/arena/">Arena ガイド</a> を参照してください。</p>
+    <h3>4.2 100 USDT の流れ</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>行き先</th><th>金額</th><th>比率</th><th>説明</th></tr></thead>
+      <tbody>
+        <tr><td><strong>当ラウンド賞金</strong></td><td>90.25 USDT</td><td>90.25%</td><td>56 名の勝者に即時支払い</td></tr>
+        <tr><td><strong>Epoch 大賞プール</strong></td><td>5 USDT</td><td>5%</td><td>11 ラウンド分を蓄積</td></tr>
+        <tr><td><strong>プラットフォーム保留金</strong></td><td>4.75 USDT</td><td>4.75%</td><td>一部は成長インセンティブへ戻る</td></tr>
+      </tbody>
+    </table></div>
+    <h3>4.3 賞金構造</h3>
+    <p>1 名の Sovereign が 14.25 USDT、5 名の Bannerlord が各 5.70 USDT、10 名の Glory が各 2.85 USDT、40 名の Survivor が各 0.475 USDT を受け取ります。合計は 90.25 USDT で、毎ラウンド 56% の参加者が USDT を獲得し、16% がリーダー席へ昇格します。残る 44 名の Fallen は Spirit となり、Epoch 大賞の行方を左右する 1 票を手にします。</p>
+    <h3>4.4 Epoch 大賞</h3>
+    <p>各ラウンドの 5% が大賞プールに入り、11 ラウンドで <strong>55 USDT</strong> になります。90% は支持ボード上のリーダーへ、10% は投票に参加した Spirit の中からランダムに選ばれた幸運者（投票者の約 1%）へ支払われます。Epoch の終局では、最も多くの支持票を集めたリーダーが <strong>Grand Chieftain</strong> として戴冠し、その名は NU World の年代記に永久に刻まれます。</p>
+    <h3>4.5 公平性</h3>
+    <p>比率はスマートコントラクトに固定され、抽選は Chainlink VRF v2.5 で検証可能です。賞金は即時請求でき、未完売時は全額返金されます。</p>
+
+    <h2>五、成長インセンティブプール</h2>
+    <p>プラットフォームは Arena の各ラウンドで保留した資金の一部を <strong>Growth Incentive Pool</strong> に注入します。このプールは、Level で継続的に成長するユーザーを報いるためだけに使われます。</p>
+    <blockquote><p>他の場所では、ゲームの手数料は胴元へ流れます。LevelUp Land では、それが本気で成長する人へ戻ります。</p></blockquote>
+
+    <h2>六、価値提案</h2>
+    <p><strong>LevelUp Land は、ユーザーの継続的な成長に伴走するプラットフォームです。</strong></p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>役割</th><th>提供するもの</th><th>受け取るもの</th></tr></thead>
+      <tbody>
+        <tr><td>航海者</td><td>毎日の継続、タスク、競技への勇気</td><td>成長ポイント、レベル、パートナー報酬、USDT 賞金</td></tr>
+        <tr><td>プロジェクト</td><td>懸賞予算とタスク設計</td><td>成長履歴を持つ高品質ユーザー</td></tr>
+        <tr><td>プラットフォーム</td><td>基盤、コントラクト、公平性</td><td>持続可能なエコシステムと一部保留金</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>七、これからの航路</h2>
+    <p>NU World は Arena の最初の海域にすぎません。今後、異なるテーマや経済パラメータを持つ新しい世界、ゲームセンター、バッジ図鑑、より深いパートナー連携が順次開かれます。</p>
+    <p><strong>群島の灯台はすでに灯っています。船は岸辺にあります。残る問いはひとつ、あなたはいつ出航しますか？</strong></p>
+
+    <p class="wp-disclaimer">免責事項：本文の数値は実際にデプロイされたスマートコントラクトのパラメータを基準とします。Arena はオンチェーン資産を伴うゲームです。ルールを十分に理解し、慎重に参加してください。本文は投資助言ではありません。</p>
+  </article>
+</DocsLayout>

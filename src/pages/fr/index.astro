@@ -1,0 +1,53 @@
+﻿---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const cards = [
+  {
+    href: '/fr/whitepaper/',
+    tag: 'Whitepaper',
+    title: 'Livre blanc du projet',
+    desc: 'Toute l’histoire de LevelUp Land : univers, carte produit et modèle économique d’Arena, sous forme de carte pour chaque navigateur.',
+  },
+  {
+    href: '/fr/arena/',
+    tag: 'Arena',
+    title: 'Guide Arena',
+    desc: 'Entrez dans Arena et son premier monde, NU World : tickets Battle Soul, tirages on-chain, niveaux de récompense, soutiens des Spirits et grand prix d’Epoch.',
+  },
+  {
+    href: '/fr/level/',
+    tag: 'Level',
+    title: 'Guide du système de progression',
+    desc: 'Today’s Voyage, XP, niveaux, séries et récompenses de progression : découvrez comment votre navigateur progresse jour après jour.',
+  },
+];
+---
+
+<DocsLayout title="Accueil" slug="" locale="fr" transparentHeader>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">LEVELUP LAND · DOCS</p>
+      <h1 class="hero-title"><span class="ocean-gradient-text">L’archipel de la croissance</span></h1>
+      <p class="hero-sub">
+        Que vous montiez à bord pour la première fois ou que vous soyez déjà un capitaine aguerri,
+        cette carte vous accompagne plus loin à chaque étape du voyage.
+      </p>
+      <div class="hero-chips">
+        <span class="stat-chip">Croissance continue</span>
+        <span class="stat-chip">Récompenses partenaires</span>
+        <span class="stat-chip">Arena on-chain</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {cards.map((c) => (
+      <a class="glass-card doc-card" href={c.href}>
+        <span class="doc-tag">{c.tag}</span>
+        <h2>{c.title}</h2>
+        <p>{c.desc}</p>
+        <span class="doc-cta">Prendre le large →</span>
+      </a>
+    ))}
+  </section>
+</DocsLayout>
