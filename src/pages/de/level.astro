@@ -1,0 +1,76 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Level-Wachstumssystem"
+  description="Leitfaden zum Wachstumssystem von LevelUp Land: Reisekarte, 8 Inseln, tägliche Check-ins, Belohnungsseltenheit und Growth Incentive Pool."
+  slug="level"
+  locale="de"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · LEVEL</p>
+      <h1>⛵ Level-Wachstumssystem</h1>
+      <p class="page-lede">Öffne die Reisekarte: 8 Inseln erscheinen am Horizont. Dies ist die Hauptroute von LevelUp Land, auf der dich der tägliche “Today’s Voyage” vom Anfängergewässer bis zum Schatzatoll führt.</p>
+    </header>
+
+    <h2>Was ist die Reisekarte</h2>
+    <p>Unter <code>/level</code> siehst du eine vertikale Reisekarte mit Inseln von Lv.1 bis Lv.8. Jede Insel hat vier Zustände:</p>
+    <ul>
+      <li><strong>Aktuelle Insel</strong> — dein derzeitiger Standort, öffnet das Check-in-Panel.</li>
+      <li><strong>Erobert</strong> — nach 30 Reisen erreicht.</li>
+      <li><strong>Gesperrt</strong> — die nächste Insel im Nebel.</li>
+      <li><strong>Nebelhorizont</strong> — Gewässer jenseits von Lv.8, die später geöffnet werden.</li>
+    </ul>
+
+    <h2>Levelaufstieg</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Regel</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Voraussetzung</td><td>30 tägliche Check-ins auf der aktuellen Insel</td></tr>
+        <tr><td>Frequenz</td><td>Ein “Today’s Voyage” pro Tag</td></tr>
+        <tr><td>Level</td><td>Lv.1 bis Lv.8 verfügbar</td></tr>
+        <tr><td>Fortschritt</td><td>Insel-Fortschrittsbalken und Check-in-Kalender</td></tr>
+      </tbody>
+    </table></div>
+    <p>Die tägliche Reise kann eine Truhe, ein kurzes Video oder eine soziale Interaktion sein. Nach Abschluss steigt der Fortschritt um 1 und Growth Points werden gutgeschrieben.</p>
+
+    <h2>Belohnungsseltenheit</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Seltenheit</th><th>Growth Points</th><th>Typischer Bonus</th></tr></thead>
+      <tbody>
+        <tr><td>⚪ Common</td><td>+30 💎</td><td>Standardvorräte</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Zum Beispiel +1 Arena-Ziehungschance</td></tr>
+        <tr><td>🟣 Epic</td><td>+60 💎</td><td>Zum Beispiel +2 Chancen</td></tr>
+        <tr><td>🟡 Legendary</td><td>+100 💎</td><td>Badges, gestapelte Boni und seltene Beute</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Wofür Growth Points dienen</h2>
+    <ul>
+      <li>Growth Points sind das gemeinsame Wachstumsguthaben aus Level-Check-ins und Quest-Aufgaben.</li>
+      <li>Level und Punkte bilden dein Profil und öffnen bessere Partnerbelohnungen.</li>
+      <li>Einlösungen, Shop, Gameplay-Tickets und weitere Nutzungen folgen mit der Erweiterung der Karte.</li>
+    </ul>
+
+    <h2>Growth Incentive Pool</h2>
+    <blockquote><p>Ein Teil der Reserve jeder Arena-Runde fließt in einen Pool für Nutzer, die in Level kontinuierlich wachsen.</p></blockquote>
+    <p>Durch Beständigkeit kannst du Boosts, Battle-Soul-Tickets, Badges und weitere Vorteile erhalten. Die Finanzflüsse stehen im <a href="/de/whitepaper/">Whitepaper</a>.</p>
+
+    <h2>Verbindung mit Quest</h2>
+    <ul>
+      <li>Partneraufgaben in Quest geben ebenfalls Growth Points.</li>
+      <li>Du kannst von Quest zu Level wechseln, einchecken und zurückkehren.</li>
+      <li>Manche Quests erscheinen als “Today’s Voyage” und zählen doppelt.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>F: Was passiert, wenn ich einen Tag verpasse?</h3>
+    <p>Der Inselfortschritt fällt nicht zurück, aber die Serie bricht und seltene Belohnungen kommen langsamer.</p>
+    <h3>F: Mein Check-in erscheint nicht.</h3>
+    <p>Einige Aufgaben benötigen Prüfung. Nach “Verifying” werden Fortschritt und Punkte gutgeschrieben.</p>
+    <h3>F: Was kommt nach allen 8 Inseln?</h3>
+    <p>Neue Gewässer werden vorbereitet. Level, Punkte und Reiselog bleiben erhalten.</p>
+  </article>
+</DocsLayout>

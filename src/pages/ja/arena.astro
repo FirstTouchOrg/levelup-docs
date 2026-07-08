@@ -1,0 +1,111 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Arena ガイド"
+  description="LevelUp Land Arena（NU World）の遊び方ガイド：Battle Soul チケット、オンチェーン抽選、報酬階層、Spirit の支持、Epoch 大賞。"
+  slug="arena"
+  locale="ja"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · ARENA</p>
+      <h1>⚔️ Arena ガイド</h1>
+      <p class="page-lede">
+        群島の最深部にある渦潮の海へようこそ。<strong>Arena は LevelUp Land の競技エリア</strong>で、
+        複数のゲーム世界から構成されます。最初に公開された世界は <strong>NU World</strong> です。
+        100 名の勇士が参加し、抽選はオンチェーンで行われ、勝者は栄誉を得て、敗者は Spirit となり
+        Epoch の行方を左右する投票権を持ちます。
+      </p>
+    </header>
+
+    <blockquote>
+      <p>
+        NU World では、1 USDT のライト戦場から高額戦場まで、複数のチケット価格の戦場が並行して開かれます。
+        ルール、確率、分配比率は同一で、賞金だけがチケット価格に比例して拡大します。
+        <strong>このページでは 1 USDT 戦場を例に説明します。</strong>
+      </p>
+    </blockquote>
+
+    <h2>クイックスタート：5 ステップで参加</h2>
+    <ol>
+      <li><strong>ウォレットを連携</strong> — BSC ウォレットをプロフィールに登録し、USDT と少量の BNB（ガス代）を用意します。</li>
+      <li><strong>戦場を選ぶ</strong> — <code>/arena</code> で販売中のラウンドを選びます。カードには価格、販売進捗、Epoch 内のラウンド番号が表示されます。</li>
+      <li><strong>Battle Soul を購入</strong> — 各アドレスは 1 ラウンドにつき 1 枚だけ購入できます。購入後、Battle Soul NFT を受け取ります。</li>
+      <li><strong>抽選を待つ</strong> — 100 枚が完売すると Chainlink VRF による乱数が要求され、抽選が実行されます。</li>
+      <li><strong>運命を確認</strong> — 抽選後に Battle Soul を請求すると、階層と Spirit 形態が公開され、賞金があれば即時にウォレットへ届きます。</li>
+    </ol>
+
+    <h2>NU World の基本ルール</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>1 ラウンドのチケット数</td><td>100 枚。完売するとラウンドがロックされます。</td></tr>
+        <tr><td>チケット価格</td><td>戦場ごとに異なり、BSC 上の USDT で支払います。</td></tr>
+        <tr><td>購入制限</td><td>1 アドレスにつき各ラウンド 1 枚まで。</td></tr>
+        <tr><td>販売時間</td><td>ラウンド開始から 24 時間。</td></tr>
+        <tr><td>未完売の場合</td><td>ラウンドはキャンセルされ、チケット代は全額返金されます。</td></tr>
+        <tr><td>抽選方式</td><td>Chainlink VRF v2.5 の検証可能な乱数と Fisher–Yates シャッフル。</td></tr>
+        <tr><td>Epoch</td><td>11 ラウンドで 1 Epoch。最後に大賞と Grand Chieftain を決定します。</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>報酬階層</h2>
+    <p>抽選後、100 名の勇士は 5 つの運命階層へランダムに割り当てられます（1 USDT 戦場の例）。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>運命</th><th>人数</th><th>確率</th><th>賞金</th><th>倍率</th></tr></thead>
+      <tbody>
+        <tr><td>👑 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td></tr>
+        <tr><td>🚩 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td></tr>
+        <tr><td>🏅 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td></tr>
+        <tr><td>🛡️ Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td></tr>
+        <tr><td>⚰️ Fallen</td><td>44</td><td>44%</td><td>0（Spirit の選択権を獲得）</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>各ラウンドではチケットプールの <strong>90.25%</strong> が賞金として支払われ、<strong>56%</strong> の参加者が USDT を受け取ります。</li>
+      <li><strong>5%</strong> は Epoch 大賞プールに入り、<strong>4.75%</strong> はプラットフォーム保留金となります。その一部は <a href="/ja/level/">Level</a> の成長インセンティブへ戻ります。</li>
+      <li>Sovereign とリーダー階層は支持ボードに入り、Epoch 大賞を競います。</li>
+    </ul>
+
+    <h2>Fallen と Spirit の選択</h2>
+    <p>44 名の Fallen の Battle Soul は <strong>Spirit</strong> となり、取り消しできない選択を 1 つ行います。</p>
+    <h3>🔥 Soul を鍛造する</h3>
+    <p>Spirit を <strong>Mind Crystal</strong> に変換します。これは NU World 内の強化、進化、季節イベントで使う資源で、USDT へ戻すことはできません。</p>
+    <h3>🗳️ リーダーを支持する</h3>
+    <p>支持ボード上の任意のリーダーへ 1 票を投じます。投票はオンチェーンに記録され、変更や撤回はできません。投票者には Epoch 大賞の一部を得るチャンスがあります。</p>
+
+    <h2>Epoch 大賞と Grand Chieftain</h2>
+    <p>11 ラウンドごとに 1 Epoch が形成されます。1 USDT 戦場では各ラウンド 5 USDT が積み立てられ、合計 <strong>55 USDT</strong> の大賞プールになります。</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>受取対象</th><th>割合</th><th>金額</th></tr></thead>
+      <tbody>
+        <tr><td>支持ボード上のリーダー</td><td>90%</td><td>49.5 USDT</td></tr>
+        <tr><td>支持投票に参加した Spirit（約 1% をランダム抽選）</td><td>10%</td><td>5.5 USDT</td></tr>
+      </tbody>
+    </table></div>
+    <p>Epoch 終了時、最も多くの支持票を集めたリーダーが <strong>Grand Chieftain</strong> として記録されます。</p>
+
+    <h2>請求、返金、公平性</h2>
+    <ul>
+      <li>抽選後、「My Holdings」から Battle Soul を請求し、結果と賞金を受け取ります。賞金にロック期間はありません。</li>
+      <li>24 時間以内に完売しないラウンドはキャンセルされ、購入者はチケット代を全額返金できます。</li>
+      <li>乱数は Chainlink VRF v2.5 により生成され、証明はオンチェーンで検証できます。</li>
+      <li>賞金階層、大賞プール、保留金の比率はスマートコントラクトに固定されています。</li>
+      <li>1 アドレスにつき 1 枚の購入制限により、各ラウンドは 100 名の実在の参加者による戦場になります。</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Q: Arena と NU World の関係は？</h3>
+    <p>Arena は競技エリア全体で、NU World は最初に公開されたゲーム世界です。今後追加される各世界には、それぞれ独自のテーマとルールが用意されます。</p>
+    <h3>Q: 参加に必要なものは？</h3>
+    <p>BSC ウォレット、チケット代の USDT、少量の BNB、そしてウォレット連携済みの LevelUp Land アカウントです。</p>
+    <h3>Q: 投票を変更できますか？</h3>
+    <p>できません。支持投票は取り消し不能なオンチェーン操作です。</p>
+
+    <p class="page-note">
+      注意：Arena はオンチェーン競技型ゲームです。結果は検証可能な乱数で決まります。ルールを理解し、無理のない範囲で楽しんでください。
+    </p>
+  </article>
+</DocsLayout>

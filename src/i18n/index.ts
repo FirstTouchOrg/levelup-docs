@@ -3,7 +3,7 @@
  * 預設語言（繁體中文）位於根路徑，其餘語言以 /<code>/ 為前綴。
  */
 
-export type LocaleCode = 'zh-hant' | 'en' | 'vi';
+export type LocaleCode = 'zh-hant' | 'en' | 'vi' | 'ja' | 'id' | 'fr' | 'de';
 
 export interface LocaleMeta {
   code: LocaleCode;
@@ -19,6 +19,10 @@ export const LOCALES: Record<LocaleCode, LocaleMeta> = {
   'zh-hant': { code: 'zh-hant', lang: 'zh-Hant', label: '繁體中文', basePath: '' },
   en: { code: 'en', lang: 'en', label: 'English', basePath: '/en' },
   vi: { code: 'vi', lang: 'vi', label: 'Tiếng Việt', basePath: '/vi' },
+  ja: { code: 'ja', lang: 'ja', label: '日本語', basePath: '/ja' },
+  id: { code: 'id', lang: 'id', label: 'Indonesian', basePath: '/id' },
+  fr: { code: 'fr', lang: 'fr', label: 'Français', basePath: '/fr' },
+  de: { code: 'de', lang: 'de', label: 'Deutsch', basePath: '/de' },
 };
 
 export const DEFAULT_LOCALE: LocaleCode = 'zh-hant';
@@ -52,6 +56,34 @@ export const UI: Record<LocaleCode, UIStrings> = {
     nav: { home: 'Trang chủ', whitepaper: 'Sách trắng', arena: 'Hướng dẫn Arena', level: 'Hướng dẫn Level' },
     footerTagline: 'Ra khơi mỗi ngày, gặt hái không ngừng',
     footerSub: 'Quần đảo của những người trưởng thành',
+  },
+  ja: {
+    siteName: 'LevelUp Land Docs',
+    description: 'LevelUp Land ヘルプセンター — すべての航海者の成長に寄り添います',
+    nav: { home: 'ホーム', whitepaper: 'ホワイトペーパー', arena: 'Arena ガイド', level: 'Level ガイド' },
+    footerTagline: '毎日航海し、成長を重ねる',
+    footerSub: '成長者の群島',
+  },
+  id: {
+    siteName: 'LevelUp Land Docs',
+    description: 'Pusat Bantuan LevelUp Land — tumbuh bersama setiap pelaut, setiap hari',
+    nav: { home: 'Beranda', whitepaper: 'Whitepaper', arena: 'Panduan Arena', level: 'Panduan Level' },
+    footerTagline: 'Berlayar setiap hari, panen di sepanjang jalan',
+    footerSub: 'Kepulauan Pertumbuhan',
+  },
+  fr: {
+    siteName: 'LevelUp Land Docs',
+    description: 'Centre d’aide LevelUp Land — accompagner chaque navigateur dans sa progression',
+    nav: { home: 'Accueil', whitepaper: 'Livre blanc', arena: 'Guide Arena', level: 'Guide Level' },
+    footerTagline: 'Naviguer chaque jour, grandir sans cesse',
+    footerSub: 'L’archipel de la croissance',
+  },
+  de: {
+    siteName: 'LevelUp Land Docs',
+    description: 'LevelUp Land Hilfezentrum — Wachstum für jede Reise, jeden Tag',
+    nav: { home: 'Startseite', whitepaper: 'Whitepaper', arena: 'Arena-Leitfaden', level: 'Level-Leitfaden' },
+    footerTagline: 'Jeden Tag segeln, stetig wachsen',
+    footerSub: 'Das Archipel des Wachstums',
   },
 };
 

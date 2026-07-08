@@ -1,0 +1,81 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Whitepaper Proyek"
+  description="Whitepaper LevelUp Land: Kepulauan Pertumbuhan, visi platform, peta produk, dan model ekonomi Arena on-chain."
+  slug="whitepaper"
+  locale="id"
+>
+  <article class="prose">
+    <header class="wp-header">
+      <p class="wp-eyebrow">LEVELUP LAND · WHITEPAPER</p>
+      <h1 class="wp-title"><span class="ocean-gradient-text">Kepulauan Pertumbuhan</span></h1>
+      <p class="wp-sub">Whitepaper Proyek LevelUp Land · Juli 2026</p>
+    </header>
+
+    <h2>1. Pembuka</h2>
+    <p>Setiap orang punya laut di dalam dirinya: luas, belum dikenal, berisi badai sekaligus harta. Banyak orang hanya menatap dari pantai; sebagian lain melepas tali dan berlayar melawan angin.</p>
+    <p><strong>LevelUp Land dibangun untuk orang-orang yang memilih berlayar.</strong></p>
+    <p>Kami percaya pertumbuhan bukan slogan, melainkan perjalanan yang bisa dilihat, dicatat, dan diberi imbalan. Setiap check-in, tugas, dan kompetisi menjadi jejak yang diingat oleh kepulauan ini.</p>
+    <blockquote><p>Berlayar setiap hari, panen di sepanjang jalan. — Kredo para pelaut LevelUp Land</p></blockquote>
+
+    <h2>2. Masalah yang Kami Selesaikan</h2>
+    <p>Era ini tidak kekurangan peluang; yang kurang adalah <strong>konsistensi</strong>. Aktivitas terpisah membuat usaha pengguna tidak mengendap, sementara proyek membutuhkan pengguna jangka panjang, bukan pengunjung sesaat.</p>
+    <ul>
+      <li><strong>Untuk pengguna</strong>: check-in, tugas, dan kompetisi masuk ke satu kurva pertumbuhan.</li>
+      <li><strong>Untuk proyek</strong>: hadiah dapat diarahkan ke pengguna yang punya level, riwayat, dan aktivitas nyata.</li>
+      <li><strong>Untuk platform</strong>: sebagian dana yang ditahan dari permainan dikembalikan sebagai insentif pertumbuhan.</li>
+    </ul>
+
+    <h2>3. Tiga Produk Utama</h2>
+    <h3>⛵ Level · Jalur Pelaut</h3>
+    <p>Level adalah jalur utama. Delapan pulau mewakili Lv.1 sampai Lv.8. Satu “Today’s Voyage” per hari menambah progres, dan 30 voyage membawa pengguna ke pulau berikutnya.</p>
+    <h3>🗺️ Quest · Guild Bounty</h3>
+    <p>Quest mengumpulkan tugas dari berbagai partner: mengikuti, bergabung, mencoba produk, atau membuat konten. Penyelesaian memberi hadiah partner dan Growth Points.</p>
+    <h3>⚔️ Arena · Tempat Ujian Keberanian</h3>
+    <p>Arena adalah divisi kompetitif yang berisi beberapa dunia permainan. Dunia pertama adalah <strong>NU World</strong>, tempat 100 peserta membeli Battle Soul, hasil diundi on-chain, dan Spirit ikut menentukan Epoch.</p>
+
+    <h2>4. Model Ekonomi Arena</h2>
+    <p>NU World berjalan di BNB Smart Chain dan memakai USDT. Prinsipnya adalah <strong>aturan transparan, porsi besar dana yang kembali ke peserta, dan permainan jangka panjang</strong>.</p>
+    <h3>4.1 Ringkasan Gameplay</h3>
+    <p>Setiap ronde menjual 100 Battle Soul NFT; setiap alamat hanya dapat membeli 1 tiket per ronde. Setelah habis, Chainlink VRF v2.5 menentukan hasil. Setiap 11 ronde membentuk 1 Epoch. Jika tidak habis dalam 24 jam, ronde dibatalkan dan dana dikembalikan penuh. NU World membuka beberapa medan perang dengan harga tiket berbeda; aturan dan rasio distribusinya sama, dan hadiah naik proporsional mengikuti harga tiket — <strong>bab ini memakai medan perang 1 USDT sebagai contoh</strong>. Detail operasi ada di <a href="/id/arena/">Panduan Arena</a>.</p>
+    <h3>4.2 Distribusi 100 USDT</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tujuan</th><th>Jumlah</th><th>Rasio</th><th>Penjelasan</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hadiah ronde</strong></td><td>90.25 USDT</td><td>90.25%</td><td>Dibayar ke 56 pemenang</td></tr>
+        <tr><td><strong>Pool hadiah besar Epoch</strong></td><td>5 USDT</td><td>5%</td><td>Dikumpulkan selama 11 ronde</td></tr>
+        <tr><td><strong>Cadangan platform</strong></td><td>4.75 USDT</td><td>4.75%</td><td>Sebagian kembali ke Growth Incentive Pool</td></tr>
+      </tbody>
+    </table></div>
+    <h3>4.3 Struktur Hadiah</h3>
+    <p>Sovereign menerima 14.25 USDT; 5 Bannerlord masing-masing 5.70 USDT; 10 Glory masing-masing 2.85 USDT; dan 40 Survivor masing-masing 0.475 USDT. Totalnya 90.25 USDT — 56% peserta menerima USDT dan 16% naik ke kursi pemimpin. Sisanya, 44 pejuang yang gugur, berubah menjadi Spirit dan memegang satu suara yang ikut menentukan hadiah besar Epoch.</p>
+    <h3>4.4 Hadiah Besar Epoch</h3>
+    <p>Pool 5% dari 11 ronde menjadi <strong>55 USDT</strong>. Sebanyak 90% dibagikan kepada pemimpin di papan dukungan, dan 10% kepada Spirit pemilih yang terpilih acak (sekitar 1% dari seluruh pemilih). Di akhir Epoch, pemimpin dengan suara dukungan terbanyak dimahkotai sebagai <strong>Grand Chieftain</strong> dan namanya diabadikan dalam kronik NU World.</p>
+    <h3>4.5 Komitmen Keadilan</h3>
+    <p>Rasio dikunci di smart contract; randomness disediakan Chainlink VRF v2.5; hadiah dapat diklaim langsung; ronde yang gagal terjual memberi refund penuh.</p>
+
+    <h2>5. Growth Incentive Pool</h2>
+    <p>Sebagian cadangan platform dari Arena masuk ke <strong>Growth Incentive Pool</strong>, pool khusus untuk memberi hadiah kepada pengguna yang terus bertumbuh di Level.</p>
+    <blockquote><p>Di tempat lain, biaya permainan mengalir ke operator. Di LevelUp Land, sebagian mengalir kembali kepada mereka yang sungguh-sungguh bertumbuh.</p></blockquote>
+
+    <h2>6. Nilai Platform</h2>
+    <p><strong>LevelUp Land adalah platform yang mendampingi pertumbuhan berkelanjutan pengguna.</strong></p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Peran</th><th>Yang diberikan</th><th>Yang diterima</th></tr></thead>
+      <tbody>
+        <tr><td>Pelaut</td><td>Konsistensi, tugas, keberanian berkompetisi</td><td>Points, level, hadiah partner, hadiah USDT</td></tr>
+        <tr><td>Proyek</td><td>Budget bounty dan desain tugas</td><td>Pengguna berkualitas dengan riwayat pertumbuhan</td></tr>
+        <tr><td>Platform</td><td>Infrastruktur, kontrak, keadilan</td><td>Ekosistem berkelanjutan</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>7. Arah Berikutnya</h2>
+    <p>NU World hanyalah wilayah pertama Arena. Dunia baru, pusat permainan, koleksi badge, dan kolaborasi partner yang lebih dalam akan dibuka secara bertahap.</p>
+    <p><strong>Mercusuar sudah menyala. Kapal ada di pantai. Pertanyaannya: kapan kamu berlayar?</strong></p>
+
+    <p class="wp-disclaimer">Disclaimer: angka yang tercantum mengikuti parameter yang sebenarnya diterapkan di smart contract. Arena melibatkan aset on-chain; pahami aturan dan berpartisipasilah secara bijak. Dokumen ini bukan nasihat investasi.</p>
+  </article>
+</DocsLayout>

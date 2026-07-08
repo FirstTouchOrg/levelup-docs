@@ -1,0 +1,101 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Guide Arena"
+  description="Guide complet d’Arena (NU World) : tickets Battle Soul, tirages on-chain, niveaux de récompense, soutiens des Spirits et grand prix d’Epoch."
+  slug="arena"
+  locale="fr"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · ARENA</p>
+      <h1>⚔️ Guide Arena</h1>
+      <p class="page-lede">
+        Bienvenue dans les eaux tourbillonnantes au cœur de l’archipel. <strong>Arena est la division compétitive de LevelUp Land</strong>,
+        composée de plusieurs mondes de jeu. Le premier monde ouvert est <strong>NU World</strong>&nbsp;: 100 guerriers entrent,
+        le tirage est réalisé on-chain, les vainqueurs sont couronnés, et les vaincus deviennent des Spirits qui influencent le destin de l’Epoch.
+      </p>
+    </header>
+
+    <blockquote><p>NU World propose plusieurs champs de bataille avec des prix de ticket différents. Les règles, probabilités et ratios sont identiques&nbsp;; seuls les montants évoluent proportionnellement. <strong>Cette page utilise le champ de bataille à 1 USDT comme exemple.</strong></p></blockquote>
+
+    <h2>Démarrage Rapide&nbsp;: 5 Étapes</h2>
+    <ol>
+      <li><strong>Lier le wallet</strong> — associez votre wallet BSC et prévoyez de l’USDT ainsi qu’un peu de BNB pour les frais.</li>
+      <li><strong>Choisir un champ de bataille</strong> — ouvrez <code>/arena</code>, sélectionnez une manche en vente et vérifiez prix, progression et position dans l’Epoch.</li>
+      <li><strong>Acheter un Battle Soul</strong> — chaque adresse peut acheter 1 ticket par manche et reçoit un NFT Battle Soul.</li>
+      <li><strong>Attendre le tirage</strong> — une fois les 100 tickets vendus, Chainlink VRF fournit l’aléa et le tirage s’exécute.</li>
+      <li><strong>Révéler le résultat</strong> — réclamez le Battle Soul pour voir votre rang, votre forme de Spirit et recevoir immédiatement vos gains le cas échéant.</li>
+    </ol>
+
+    <h2>Règles de Base de NU World</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Règle</th><th>Détail</th></tr></thead>
+      <tbody>
+        <tr><td>Tickets par manche</td><td>100, puis la manche est verrouillée</td></tr>
+        <tr><td>Prix du ticket</td><td>Variable selon le champ de bataille, payé en USDT sur BSC</td></tr>
+        <tr><td>Limite d’achat</td><td>1 ticket par adresse et par manche</td></tr>
+        <tr><td>Fenêtre de vente</td><td>24 heures après l’ouverture</td></tr>
+        <tr><td>Si la vente échoue</td><td>Annulation de la manche et remboursement complet</td></tr>
+        <tr><td>Tirage</td><td>Chainlink VRF v2.5 et mélange Fisher–Yates</td></tr>
+        <tr><td>Epoch</td><td>11 manches forment une Epoch&nbsp;; à la fin, le grand prix est réglé et le Grand Chieftain est couronné</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Niveaux de Récompense</h2>
+    <p>Après le tirage, les 100 participants sont répartis dans cinq destins.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Destin</th><th>Nombre</th><th>Probabilité</th><th>Gain</th><th>Retour</th></tr></thead>
+      <tbody>
+        <tr><td>👑 Sovereign</td><td>1</td><td>1&nbsp;%</td><td>14,25 USDT</td><td>14,25×</td></tr>
+        <tr><td>🚩 Bannerlord</td><td>5</td><td>5&nbsp;%</td><td>5,70 USDT</td><td>5,7×</td></tr>
+        <tr><td>🏅 Glory</td><td>10</td><td>10&nbsp;%</td><td>2,85 USDT</td><td>2,85×</td></tr>
+        <tr><td>🛡️ Survivor</td><td>40</td><td>40&nbsp;%</td><td>0,475 USDT</td><td>0,475×</td></tr>
+        <tr><td>⚰️ Fallen</td><td>44</td><td>44&nbsp;%</td><td>0 (obtient le droit de choix du Spirit)</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><strong>90,25&nbsp;%</strong> du pool de la manche est distribué en gains, et <strong>56&nbsp;%</strong> des participants reçoivent de l’USDT.</li>
+      <li><strong>5&nbsp;%</strong> alimente le grand prix d’Epoch&nbsp;; <strong>4,75&nbsp;%</strong> est la réserve plateforme, dont une partie revient vers <a href="/fr/level/">Level</a>.</li>
+      <li>Le Sovereign et les leaders entrent dans le tableau de soutien pour concourir au prix d’Epoch.</li>
+    </ul>
+
+    <h2>Les Fallen et le Choix du Spirit</h2>
+    <p>Les 44 Fallen deviennent des <strong>Spirits</strong> et font un choix irréversible entre deux options.</p>
+    <h3>🔥 Forger le Spirit</h3>
+    <p>Convertissez le Spirit en <strong>Mind Crystals</strong>, ressource interne de NU World pour améliorations, évolutions et événements saisonniers. Ils ne se reconvertissent pas en USDT.</p>
+    <h3>🗳️ Soutenir un leader</h3>
+    <p>Attribuez votre unique voix à un leader du tableau. Le vote est inscrit on-chain, définitif, et peut ouvrir l’accès à une part du grand prix.</p>
+
+    <h2>Grand Prix d’Epoch</h2>
+    <p>Après 11 manches, le champ à 1 USDT accumule <strong>55 USDT</strong>.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Bénéficiaires</th><th>Part</th><th>Montant</th></tr></thead>
+      <tbody>
+        <tr><td>Leaders du tableau de soutien</td><td>90&nbsp;%</td><td>49,5 USDT</td></tr>
+        <tr><td>Spirits votants tirés au sort (environ 1&nbsp;% des votants)</td><td>10&nbsp;%</td><td>5,5 USDT</td></tr>
+      </tbody>
+    </table></div>
+    <p>À la fin de l’Epoch, le leader ayant recueilli le plus de voix de soutien est couronné <strong>Grand Chieftain</strong>&nbsp;; son nom est gravé à jamais dans la chronique de NU World.</p>
+
+    <h2>Réclamations, Remboursements et Équité</h2>
+    <ul>
+      <li>Les gains se réclament dans «&nbsp;My Holdings&nbsp;» et suivent le détenteur actuel du NFT.</li>
+      <li>Une manche non vendue en 24 heures est annulée et remboursée intégralement.</li>
+      <li>L’aléa provient de Chainlink VRF v2.5, vérifiable on-chain.</li>
+      <li>Les ratios de gains, de grand prix et de réserve sont verrouillés dans le smart contract.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Q&nbsp;: Quel lien entre Arena et NU World&nbsp;?</h3>
+    <p>Arena est la division compétitive&nbsp;; NU World est le premier monde ouvert.</p>
+    <h3>Q&nbsp;: Que faut-il pour participer&nbsp;?</h3>
+    <p>Un wallet BSC, de l’USDT pour le ticket, un peu de BNB pour les frais et un compte LevelUp Land lié.</p>
+    <h3>Q&nbsp;: Puis-je modifier mon vote&nbsp;?</h3>
+    <p>Non. Le soutien est une action on-chain définitive.</p>
+
+    <p class="page-note">Arena est un jeu compétitif on-chain. Comprenez les règles, jouez selon vos moyens et profitez de l’expérience.</p>
+  </article>
+</DocsLayout>

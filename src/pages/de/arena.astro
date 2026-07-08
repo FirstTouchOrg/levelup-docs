@@ -1,0 +1,101 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Arena-Leitfaden"
+  description="Vollständiger Leitfaden zu LevelUp Land Arena (NU World): Battle-Soul-Tickets, On-Chain-Ziehungen, Belohnungsstufen, Spirit-Unterstützung und Epoch-Hauptpreis."
+  slug="arena"
+  locale="de"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · ARENA</p>
+      <h1>⚔️ Arena-Leitfaden</h1>
+      <p class="page-lede">
+        Willkommen in den Wirbelgewässern tief im Archipel. <strong>Arena ist der Wettbewerbsbereich von LevelUp Land</strong>
+        und umfasst mehrere Spielwelten. Die erste geöffnete Welt ist <strong>NU World</strong>: 100 Krieger treten ein,
+        die Ziehung erfolgt on-chain, Gewinner werden gekrönt, und Gefallene werden zu Spirits, die über die Epoch mitentscheiden.
+      </p>
+    </header>
+
+    <blockquote><p>NU World eröffnet gleichzeitig mehrere Schlachtfelder mit unterschiedlichen Ticketpreisen. Regeln, Chancen und Verteilungsquoten sind identisch; Preise skalieren proportional zum Ticketpreis. <strong>Diese Seite nutzt das 1-USDT-Schlachtfeld als Beispiel.</strong></p></blockquote>
+
+    <h2>Schnellstart in 5 Schritten</h2>
+    <ol>
+      <li><strong>Wallet verbinden</strong> — BSC-Wallet verknüpfen und USDT sowie etwas BNB für Gas bereithalten.</li>
+      <li><strong>Schlachtfeld wählen</strong> — <code>/arena</code> öffnen, eine laufende Runde wählen und Preis, Fortschritt sowie Epoch-Position prüfen.</li>
+      <li><strong>Battle Soul kaufen</strong> — pro Adresse ist 1 Ticket je Runde möglich; danach erhältst du ein Battle-Soul-NFT.</li>
+      <li><strong>Ziehung abwarten</strong> — nach 100 verkauften Tickets liefert Chainlink VRF die Zufallszahl und die Ziehung läuft.</li>
+      <li><strong>Schicksal offenlegen</strong> — Battle Soul beanspruchen, Rang und Spirit-Form sehen und Gewinne direkt erhalten.</li>
+    </ol>
+
+    <h2>Kernregeln von NU World</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Regel</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Tickets pro Runde</td><td>100, danach wird die Runde gesperrt</td></tr>
+        <tr><td>Ticketpreis</td><td>Je nach Schlachtfeld, bezahlt in USDT auf BSC</td></tr>
+        <tr><td>Kauflimit</td><td>1 Ticket pro Adresse und Runde</td></tr>
+        <tr><td>Verkaufsfenster</td><td>24 Stunden ab Start</td></tr>
+        <tr><td>Nicht ausverkauft</td><td>Runde wird storniert und vollständig erstattet</td></tr>
+        <tr><td>Ziehung</td><td>Chainlink VRF v2.5 und Fisher–Yates-Shuffle</td></tr>
+        <tr><td>Epoch</td><td>11 Runden bilden eine Epoch; am Ende werden der Hauptpreis abgerechnet und der Grand Chieftain gekrönt</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Belohnungsstufen</h2>
+    <p>Nach der Ziehung werden 100 Teilnehmer zufällig auf fünf Schicksale verteilt.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Schicksal</th><th>Anzahl</th><th>Chance</th><th>Gewinn</th><th>Rendite</th></tr></thead>
+      <tbody>
+        <tr><td>👑 Sovereign</td><td>1</td><td>1%</td><td>14,25 USDT</td><td>14,25×</td></tr>
+        <tr><td>🚩 Bannerlord</td><td>5</td><td>5%</td><td>5,70 USDT</td><td>5,7×</td></tr>
+        <tr><td>🏅 Glory</td><td>10</td><td>10%</td><td>2,85 USDT</td><td>2,85×</td></tr>
+        <tr><td>🛡️ Survivor</td><td>40</td><td>40%</td><td>0,475 USDT</td><td>0,475×</td></tr>
+        <tr><td>⚰️ Fallen</td><td>44</td><td>44%</td><td>0, erhält die Spirit-Wahl</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><strong>90,25%</strong> des Rundenpools werden als Gewinne ausgezahlt; <strong>56%</strong> der Teilnehmer erhalten USDT.</li>
+      <li><strong>5%</strong> fließen in den Epoch-Hauptpreis, <strong>4,75%</strong> sind Plattformreserve; ein Teil fließt zurück in <a href="/de/level/">Level</a>.</li>
+      <li>Sovereign, Bannerlords und Glory-Leader erscheinen auf dem Unterstützungsboard und konkurrieren um den Epoch-Preis.</li>
+    </ul>
+
+    <h2>Fallen und Spirit-Wahl</h2>
+    <p>Die 44 Fallen werden zu <strong>Spirits</strong> und treffen eine endgültige Wahl zwischen zwei Optionen.</p>
+    <h3>🔥 Spirit einschmelzen</h3>
+    <p>Wandle den Spirit in <strong>Mind Crystals</strong> um, eine NU-World-Ressource für Verbesserungen, Evolution und saisonale Spielinhalte. Sie können nicht zurück in USDT umgewandelt werden.</p>
+    <h3>🗳️ Leader unterstützen</h3>
+    <p>Gib einem Leader auf dem Board deine einzige Stimme. Die Stimme wird on-chain gespeichert, ist endgültig und kann eine Beteiligung am Epoch-Preis ermöglichen.</p>
+
+    <h2>Epoch-Hauptpreis</h2>
+    <p>Nach 11 Runden sammelt das 1-USDT-Schlachtfeld <strong>55 USDT</strong>.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Empfänger</th><th>Anteil</th><th>Betrag</th></tr></thead>
+      <tbody>
+        <tr><td>Leader auf dem Unterstützungsboard</td><td>90%</td><td>49,5 USDT</td></tr>
+        <tr><td>Per Los gezogene abstimmende Spirits (etwa 1% der Wähler)</td><td>10%</td><td>5,5 USDT</td></tr>
+      </tbody>
+    </table></div>
+    <p>Am Ende der Epoch wird der Leader mit den meisten Unterstützungsstimmen zum <strong>Grand Chieftain</strong> gekrönt; sein Name wird dauerhaft in der Chronik von NU World verewigt.</p>
+
+    <h2>Claims, Rückerstattung und Fairness</h2>
+    <ul>
+      <li>Gewinne werden in “My Holdings” beansprucht und folgen dem aktuellen NFT-Inhaber.</li>
+      <li>Nicht ausverkaufte Runden werden nach 24 Stunden storniert und vollständig erstattet.</li>
+      <li>Zufall kommt von Chainlink VRF v2.5 und ist on-chain überprüfbar.</li>
+      <li>Gewinn-, Hauptpreis- und Reservequoten sind im Smart Contract festgeschrieben.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>F: Wie hängen Arena und NU World zusammen?</h3>
+    <p>Arena ist der Wettbewerbsbereich; NU World ist die erste geöffnete Welt.</p>
+    <h3>F: Was brauche ich vor dem Kampf?</h3>
+    <p>Eine BSC-Wallet, USDT für das Ticket, etwas BNB für Gas und ein verbundenes LevelUp-Land-Konto.</p>
+    <h3>F: Kann ich meine Stimme ändern?</h3>
+    <p>Nein. Unterstützung ist eine endgültige On-Chain-Aktion.</p>
+
+    <p class="page-note">Arena ist kompetitives On-Chain-Gameplay. Verstehe die Regeln, spiele verantwortungsvoll und genieße die Welt.</p>
+  </article>
+</DocsLayout>

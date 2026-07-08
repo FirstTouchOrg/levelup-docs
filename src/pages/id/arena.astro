@@ -1,0 +1,101 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Panduan Arena"
+  description="Panduan lengkap Arena LevelUp Land (NU World): tiket Battle Soul, undian on-chain, tingkat hadiah, dukungan Spirit, dan hadiah besar Epoch."
+  slug="arena"
+  locale="id"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · ARENA</p>
+      <h1>⚔️ Panduan Arena</h1>
+      <p class="page-lede">
+        Selamat datang di perairan pusaran terdalam kepulauan. <strong>Arena adalah divisi kompetitif LevelUp Land</strong>,
+        berisi berbagai dunia permainan. Dunia pertama yang dibuka adalah <strong>NU World</strong>: 100 pejuang masuk,
+        hasil ditentukan secara on-chain, pemenang dimahkotai, dan yang gugur menjadi Spirit yang ikut menentukan akhir Epoch.
+      </p>
+    </header>
+
+    <blockquote><p>NU World menjalankan beberapa medan perang dengan harga tiket berbeda. Aturan, peluang, dan rasio distribusi sama; hadiah naik proporsional mengikuti harga tiket. <strong>Contoh di halaman ini memakai medan perang 1 USDT.</strong></p></blockquote>
+
+    <h2>Mulai Cepat: 5 Langkah</h2>
+    <ol>
+      <li><strong>Hubungkan wallet</strong> — tautkan wallet BSC dan siapkan USDT serta sedikit BNB untuk gas.</li>
+      <li><strong>Pilih medan perang</strong> — buka <code>/arena</code>, pilih ronde berstatus dijual, lalu cek harga, progres, dan posisi ronde dalam Epoch.</li>
+      <li><strong>Beli Battle Soul</strong> — setiap alamat hanya dapat membeli 1 tiket per ronde dan menerima NFT Battle Soul.</li>
+      <li><strong>Tunggu undian</strong> — setelah 100 tiket habis, Chainlink VRF meminta angka acak dan undian dijalankan.</li>
+      <li><strong>Ungkap nasibmu</strong> — klaim Battle Soul untuk melihat tingkat nasib, bentuk Spirit, dan hadiah yang langsung masuk ke wallet.</li>
+    </ol>
+
+    <h2>Aturan Inti NU World</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Aturan</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Tiket per ronde</td><td>100, ronde terkunci saat habis terjual</td></tr>
+        <tr><td>Harga tiket</td><td>Berbeda per medan perang, dibayar dengan USDT di BSC</td></tr>
+        <tr><td>Batas pembelian</td><td>1 tiket per alamat per ronde</td></tr>
+        <tr><td>Waktu penjualan</td><td>24 jam sejak ronde dibuka</td></tr>
+        <tr><td>Jika tidak habis</td><td>Ronde dibatalkan dan tiket dikembalikan penuh</td></tr>
+        <tr><td>Mekanisme undian</td><td>Chainlink VRF v2.5 dan Fisher–Yates shuffle</td></tr>
+        <tr><td>Epoch</td><td>Setiap 11 ronde membentuk 1 Epoch; di akhirnya hadiah besar dibagikan dan Grand Chieftain dimahkotai</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Tingkat Hadiah</h2>
+    <p>Setelah undian, 100 pejuang dibagi acak ke 5 tingkat nasib berikut.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Nasib</th><th>Jumlah</th><th>Peluang</th><th>Hadiah</th><th>Return</th></tr></thead>
+      <tbody>
+        <tr><td>👑 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td></tr>
+        <tr><td>🚩 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td></tr>
+        <tr><td>🏅 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td></tr>
+        <tr><td>🛡️ Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td></tr>
+        <tr><td>⚰️ Fallen</td><td>44</td><td>44%</td><td>0 (mendapat hak pilihan Spirit)</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li><strong>90.25%</strong> pool ronde dibayar sebagai hadiah, dan <strong>56%</strong> peserta menerima USDT.</li>
+      <li><strong>5%</strong> masuk ke pool hadiah besar Epoch, sementara <strong>4.75%</strong> menjadi cadangan platform; sebagian mengalir kembali ke <a href="/id/level/">Level</a>.</li>
+      <li>Sovereign dan para pemimpin masuk ke papan dukungan untuk memperebutkan hadiah Epoch.</li>
+    </ul>
+
+    <h2>Fallen dan Pilihan Spirit</h2>
+    <p>44 Fallen berubah menjadi <strong>Spirit</strong> dan membuat satu pilihan final yang tidak dapat diubah (satu dari dua opsi).</p>
+    <h3>🔥 Tempa Spirit</h3>
+    <p>Ubah Spirit menjadi <strong>Mind Crystal</strong>, sumber daya ekosistem NU World untuk peningkatan, evolusi, dan gameplay musiman. Mind Crystal tidak dapat diubah kembali menjadi USDT.</p>
+    <h3>🗳️ Dukung Pemimpin</h3>
+    <p>Berikan satu suaramu (bobot 1.0) kepada pemimpin di papan dukungan. Suara tercatat on-chain, tidak dapat diubah, dan memberi peluang ikut menerima bagian hadiah Epoch.</p>
+
+    <h2>Hadiah Besar Epoch</h2>
+    <p>Setiap 11 ronde membentuk 1 Epoch. Pada medan perang 1 USDT, pool besar terkumpul menjadi <strong>55 USDT</strong>.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Penerima</th><th>Porsi</th><th>Jumlah</th></tr></thead>
+      <tbody>
+        <tr><td>Pemimpin di papan dukungan</td><td>90%</td><td>49.5 USDT</td></tr>
+        <tr><td>Spirit yang ikut memberi dukungan dan terpilih acak (sekitar 1% dari pemilih)</td><td>10%</td><td>5.5 USDT</td></tr>
+      </tbody>
+    </table></div>
+    <p>Di akhir Epoch, pemimpin dengan suara dukungan terbanyak dimahkotai sebagai <strong>Grand Chieftain</strong>; namanya diabadikan secara permanen dalam kronik NU World.</p>
+
+    <h2>Klaim, Refund, dan Keadilan</h2>
+    <ul>
+      <li>Klaim hadiah dari “My Holdings”; hak klaim mengikuti pemegang NFT saat ini.</li>
+      <li>Ronde yang tidak habis dalam 24 jam dibatalkan dan dapat di-refund penuh.</li>
+      <li>Randomness berasal dari Chainlink VRF v2.5 dan dapat diverifikasi on-chain.</li>
+      <li>Rasio hadiah, pool besar, dan cadangan platform dikunci di smart contract.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Q: Apa hubungan Arena dan NU World?</h3>
+    <p>Arena adalah divisi kompetitif platform; NU World adalah dunia pertama yang dibuka.</p>
+    <h3>Q: Apa yang dibutuhkan sebelum bertarung?</h3>
+    <p>Wallet BSC, USDT untuk tiket, sedikit BNB untuk gas, dan akun LevelUp Land yang sudah menautkan wallet.</p>
+    <h3>Q: Apakah suara dukungan bisa diubah?</h3>
+    <p>Tidak. Dukungan adalah aksi on-chain yang final.</p>
+
+    <p class="page-note">Arena adalah gameplay kompetitif on-chain. Pahami aturan, gunakan dana secara bijak, dan nikmati permainannya.</p>
+  </article>
+</DocsLayout>

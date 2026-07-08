@@ -1,0 +1,53 @@
+﻿---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const cards = [
+  {
+    href: '/id/whitepaper/',
+    tag: 'Whitepaper',
+    title: 'Whitepaper Proyek',
+    desc: 'Kisah lengkap LevelUp Land: pandangan dunia, peta produk, dan model ekonomi Arena. Sebuah peta untuk setiap pelaut.',
+  },
+  {
+    href: '/id/arena/',
+    tag: 'Arena',
+    title: 'Panduan Arena',
+    desc: 'Masuki Arena dan dunia pertamanya, NU World: tiket Battle Soul, undian on-chain, tingkat hadiah, dukungan Spirit, dan hadiah besar Epoch.',
+  },
+  {
+    href: '/id/level/',
+    tag: 'Level',
+    title: 'Panduan Sistem Pertumbuhan',
+    desc: 'Today’s Voyage, XP dan level, streak, serta hadiah pertumbuhan — pahami bagaimana perjalanan pelautmu naik level hari demi hari.',
+  },
+];
+---
+
+<DocsLayout title="Beranda" slug="" locale="id" transparentHeader>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">LEVELUP LAND · DOCS</p>
+      <h1 class="hero-title"><span class="ocean-gradient-text">Kepulauan Pertumbuhan</span></h1>
+      <p class="hero-sub">
+        Baik kamu pelaut baru yang pertama kali naik kapal maupun kapten berpengalaman,
+        peta ini akan membawamu lebih jauh di setiap bagian perjalanan.
+      </p>
+      <div class="hero-chips">
+        <span class="stat-chip">Terus Bertumbuh</span>
+        <span class="stat-chip">Hadiah Partner</span>
+        <span class="stat-chip">Arena On-Chain</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {cards.map((c) => (
+      <a class="glass-card doc-card" href={c.href}>
+        <span class="doc-tag">{c.tag}</span>
+        <h2>{c.title}</h2>
+        <p>{c.desc}</p>
+        <span class="doc-cta">Mulai berlayar →</span>
+      </a>
+    ))}
+  </section>
+</DocsLayout>

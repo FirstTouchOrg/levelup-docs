@@ -1,0 +1,76 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Guide du Système Level"
+  description="Guide du système de progression LevelUp Land : carte de voyage, 8 îles, check-in quotidien, rareté des récompenses et Growth Incentive Pool."
+  slug="level"
+  locale="fr"
+>
+  <article class="prose">
+    <header class="page-header">
+      <p class="page-eyebrow">HELP CENTER · LEVEL</p>
+      <h1>⛵ Guide du Système Level</h1>
+      <p class="page-lede">Ouvrez la carte de voyage&nbsp;: 8 îles apparaissent à l’horizon. C’est la voie principale de LevelUp Land, où le «&nbsp;Today’s Voyage&nbsp;» quotidien vous mène des eaux débutantes jusqu’à l’atoll au trésor.</p>
+    </header>
+
+    <h2>Qu’est-ce que la Carte de Voyage</h2>
+    <p>Dans <code>/level</code>, vous voyez une carte verticale avec les îles Lv.1 à Lv.8. Chaque île possède quatre états&nbsp;:</p>
+    <ul>
+      <li><strong>Île actuelle</strong> — votre étape en cours, ouvrant le panneau de check-in.</li>
+      <li><strong>Conquise</strong> — une île obtenue après 30 voyages.</li>
+      <li><strong>Verrouillée</strong> — la prochaine île encore dans la brume.</li>
+      <li><strong>Horizon brumeux</strong> — les eaux au-delà du Lv.8, à venir.</li>
+    </ul>
+
+    <h2>Comment Monter de Niveau</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Règle</th><th>Détail</th></tr></thead>
+      <tbody>
+        <tr><td>Condition</td><td>30 check-ins quotidiens sur l’île actuelle</td></tr>
+        <tr><td>Fréquence</td><td>Un «&nbsp;Today’s Voyage&nbsp;» par jour</td></tr>
+        <tr><td>Niveaux</td><td>Lv.1 à Lv.8 disponibles</td></tr>
+        <tr><td>Progression</td><td>Barre d’île et calendrier de check-in</td></tr>
+      </tbody>
+    </table></div>
+    <p>Le voyage quotidien peut être l’ouverture d’un coffre, une courte vidéo ou une interaction sociale. Une fois terminé, la progression augmente de 1 et les Growth Points arrivent immédiatement.</p>
+
+    <h2>Rareté des Récompenses</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Rareté</th><th>Growth Points</th><th>Bonus typique</th></tr></thead>
+      <tbody>
+        <tr><td>⚪ Common</td><td>+30 💎</td><td>Rations standards</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Par exemple +1 chance de tirage Arena</td></tr>
+        <tr><td>🟣 Epic</td><td>+60 💎</td><td>Par exemple +2 chances</td></tr>
+        <tr><td>🟡 Legendary</td><td>+100 💎</td><td>Badges, bonus cumulés et récompenses rares</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>À Quoi Servent les Growth Points</h2>
+    <ul>
+      <li>Ils constituent le solde de progression commun aux check-ins Level et aux tâches Quest.</li>
+      <li>Le niveau et les points forment votre profil de navigateur et ouvrent de meilleures récompenses.</li>
+      <li>Échanges, boutique, tickets de jeu et autres usages seront ajoutés avec l’extension de la carte.</li>
+    </ul>
+
+    <h2>Growth Incentive Pool</h2>
+    <blockquote><p>Une partie de la réserve de chaque manche Arena revient dans un pool dédié aux utilisateurs qui continuent de progresser dans Level.</p></blockquote>
+    <p>Votre assiduité peut donc débloquer boosts, tickets Battle Soul, badges et autres avantages. Le détail des flux est présenté dans le <a href="/fr/whitepaper/">livre blanc</a>.</p>
+
+    <h2>Lien avec Quest</h2>
+    <ul>
+      <li>Les missions partenaires dans Quest donnent aussi des Growth Points.</li>
+      <li>Vous pouvez passer de Quest à Level pour le check-in puis revenir à la mission.</li>
+      <li>Certaines missions Quest apparaissent comme «&nbsp;Today’s Voyage&nbsp;» et comptent pour les deux.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Q&nbsp;: Que se passe-t-il si je manque un jour&nbsp;?</h3>
+    <p>La progression de l’île ne recule pas, mais la série se brise et ralentit l’accès aux récompenses rares.</p>
+    <h3>Q&nbsp;: Mon check-in n’apparaît pas.</h3>
+    <p>Certaines tâches nécessitent une vérification. Après «&nbsp;Verifying&nbsp;», progression et points sont crédités.</p>
+    <h3>Q&nbsp;: Après les 8 îles&nbsp;?</h3>
+    <p>De nouvelles eaux sont en préparation. Niveau, points et journal de voyage seront conservés.</p>
+  </article>
+</DocsLayout>
