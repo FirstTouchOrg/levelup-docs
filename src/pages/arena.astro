@@ -55,13 +55,13 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     <h2>獎勵層級：你的命運一覽</h2>
     <p>每輪開獎後，100 位勇士被隨機分入五個命運層級（獎金以 1 USDT 場次為例，回報倍數全場次通用）：</p>
     <div class="table-wrap"><table>
-      <thead><tr><th>命運</th><th>人數</th><th>概率</th><th>獎金</th><th>回報倍數</th></tr></thead>
+      <thead><tr><th>命運</th><th>人數</th><th>概率</th><th>獎金</th><th>回報倍數</th><th>念力鑽石 / 人</th></tr></thead>
       <tbody>
-        <tr><td>👑 君臨 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td></tr>
-        <tr><td>🚩 執旗領袖 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td></tr>
-        <tr><td>🏅 榮耀領袖 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td></tr>
-        <tr><td>🛡️ 存活族人 Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td></tr>
-        <tr><td>⚰️ 倒下勇士 Fallen</td><td>44</td><td>44%</td><td>0（獲得英靈抉擇權）</td><td>—</td></tr>
+        <tr><td>👑 君臨 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td><td>0.75</td></tr>
+        <tr><td>🚩 執旗領袖 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td><td>0.3</td></tr>
+        <tr><td>🏅 榮耀領袖 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td><td>0.15</td></tr>
+        <tr><td>🛡️ 存活族人 Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td><td>0.025</td></tr>
+        <tr><td>⚰️ 倒下勇士 Fallen</td><td>44</td><td>44%</td><td>0（獲得英靈抉擇權）</td><td>—</td><td>0</td></tr>
       </tbody>
     </table></div>
     <ul>
@@ -77,8 +77,7 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     </p>
     <h3>🔥 煉魂為薪</h3>
     <p>
-      將英靈熔鑄為<strong>念力鑽石</strong> —— NU 世界的生態內資源，可用於 NFT 強化、角色進化與
-      賽季特殊玩法。注意：念力鑽石不可兌換回 USDT。
+      將英靈熔鑄為<strong>念力鑽石</strong> —— NU 世界的生態內資源。念力鑽石可兌換回 USDT，兌換比例 <strong>1 : 1</strong>。兌換路徑：<strong>首頁 → 我 → 兌換獎勵</strong>。
     </p>
     <h3>🗳️ 通神擁立</h3>
     <p>
@@ -140,7 +139,7 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     <h3>Q：擁立投票投錯了能改嗎？</h3>
     <p>不能。擁立是鏈上不可逆操作，請在投票前想清楚你要輔佐的領袖。</p>
     <h3>Q：念力鑽石能換回 USDT 嗎？</h3>
-    <p>不能。念力鑽石是生態內資源，僅用於 NU 世界內的強化、進化與特殊玩法。</p>
+    <p>可以。念力鑽石可按 <strong>1 : 1</strong> 兌換回 USDT，兌換路徑：首頁 → 我 → 兌換獎勵。</p>
     <h3>Q：平台保留的資金去了哪裡？</h3>
     <p>
       每輪票池 4.75% 的平台保留金（1 USDT 場次即 4.75 USDT）中，有一部分會注入「成長激勵池」，
