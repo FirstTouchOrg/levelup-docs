@@ -55,30 +55,29 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     <h2>獎勵層級：你的命運一覽</h2>
     <p>每輪開獎後，100 位勇士被隨機分入五個命運層級（獎金以 1 USDT 場次為例，回報倍數全場次通用）：</p>
     <div class="table-wrap"><table>
-      <thead><tr><th>命運</th><th>人數</th><th>概率</th><th>獎金</th><th>回報倍數</th></tr></thead>
+      <thead><tr><th>命運</th><th>人數</th><th>概率</th><th>獎金</th><th>回報倍數</th><th>念力鑽石 / 人</th></tr></thead>
       <tbody>
-        <tr><td>👑 君臨 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td></tr>
-        <tr><td>🚩 執旗領袖 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td></tr>
-        <tr><td>🏅 榮耀領袖 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td></tr>
-        <tr><td>🛡️ 存活族人 Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td></tr>
-        <tr><td>⚰️ 倒下勇士 Fallen</td><td>44</td><td>44%</td><td>0（獲得英靈抉擇權）</td><td>—</td></tr>
+        <tr><td>👑 君臨 Sovereign</td><td>1</td><td>1%</td><td>14.25 USDT</td><td>14.25×</td><td>0.75</td></tr>
+        <tr><td>🚩 執旗領袖 Bannerlord</td><td>5</td><td>5%</td><td>5.70 USDT</td><td>5.7×</td><td>0.3</td></tr>
+        <tr><td>🏅 榮耀領袖 Glory</td><td>10</td><td>10%</td><td>2.85 USDT</td><td>2.85×</td><td>0.15</td></tr>
+        <tr><td>🛡️ 存活族人 Survivor</td><td>40</td><td>40%</td><td>0.475 USDT</td><td>0.475×</td><td>0.025</td></tr>
+        <tr><td>⚰️ 倒下勇士 Fallen</td><td>44</td><td>44%</td><td>0（獲得英靈抉擇權）</td><td>—</td><td>0</td></tr>
       </tbody>
     </table></div>
     <ul>
       <li>每輪共發放票池的 <strong>90.25%</strong> 作為獎金（1 USDT 場次即 90.25 USDT），<strong>56% 的參與者</strong>能拿到 USDT。</li>
-      <li>另有票池的 <strong>5%</strong> 注入紀元大獎池、<strong>4.75%</strong> 為平台保留金（其中一部分注入成長激勵池，回饋在 <a href="/level/">Level</a> 中持續成長的用戶）。</li>
+      <li>另有票池的 <strong>5%</strong> 注入紀元大獎池；<strong>4.75%</strong> 為平台保留金，並按等額發放念力鑽石（1 USDT 場次每輪共 4.75 顆，見上表）。平台保留金中的一部分還會注入成長激勵池，回饋在 <a href="/level/">Level</a> 中持續成長的用戶。</li>
       <li>君臨與領袖們還將登上本輪「擁立榜」，有資格競逐紀元大獎與大酋王座。</li>
     </ul>
+    <h3>💎 念力鑽石</h3>
+    <p>
+      <strong>念力鑽石</strong>是 NU 世界的生態內資源，可按 <strong>1 : 1</strong> 兌換回 USDT。兌換路徑：<strong>首頁 → 我 → 兌換獎勵</strong>。
+    </p>
 
     <h2>倒下勇士：英靈的抉擇</h2>
     <p>
       在 NU 世界，倒下不是終點。44 位倒下勇士的戰魂將化作<strong>英靈</strong>，
-      每位英靈必須做出一次<strong>不可逆</strong>的抉擇（二選一）：
-    </p>
-    <h3>🔥 煉魂為薪</h3>
-    <p>
-      將英靈熔鑄為<strong>念力鑽石</strong> —— NU 世界的生態內資源，可用於 NFT 強化、角色進化與
-      賽季特殊玩法。注意：念力鑽石不可兌換回 USDT。
+      每位英靈可以做出一次<strong>不可逆</strong>的抉擇，參與投票即有機會獲得 <strong>USDT</strong> 獎勵（見下文）：
     </p>
     <h3>🗳️ 通神擁立</h3>
     <p>
@@ -96,8 +95,8 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     <div class="table-wrap"><table>
       <thead><tr><th>分配對象</th><th>比例</th><th>金額</th></tr></thead>
       <tbody>
-        <tr><td>登上擁立榜的領袖們</td><td>90%</td><td>49.5 USDT</td></tr>
-        <tr><td>參與擁立的投票者（隨機抽取約 1% 的幸運英靈）</td><td>10%</td><td>5.5 USDT</td></tr>
+        <tr><td>登上擁立榜的領袖們</td><td>≈90.9%</td><td>50 USDT</td></tr>
+        <tr><td>參與擁立的投票者（隨機抽取 5 名幸運英靈，每人 1 USDT）</td><td>≈9.1%</td><td>5 USDT</td></tr>
       </tbody>
     </table></div>
     <p>
@@ -140,7 +139,7 @@ import DocsLayout from '../layouts/DocsLayout.astro';
     <h3>Q：擁立投票投錯了能改嗎？</h3>
     <p>不能。擁立是鏈上不可逆操作，請在投票前想清楚你要輔佐的領袖。</p>
     <h3>Q：念力鑽石能換回 USDT 嗎？</h3>
-    <p>不能。念力鑽石是生態內資源，僅用於 NU 世界內的強化、進化與特殊玩法。</p>
+    <p>可以。念力鑽石可按 <strong>1 : 1</strong> 兌換回 USDT，兌換路徑：首頁 → 我 → 兌換獎勵。</p>
     <h3>Q：平台保留的資金去了哪裡？</h3>
     <p>
       每輪票池 4.75% 的平台保留金（1 USDT 場次即 4.75 USDT）中，有一部分會注入「成長激勵池」，

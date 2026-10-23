@@ -13,89 +13,148 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <p class="page-eyebrow">HELP CENTER · ARENA</p>
       <h1>⚔️ Arena-Leitfaden</h1>
       <p class="page-lede">
-        Willkommen in den Wirbelgewässern tief im Archipel. <strong>Arena ist der Wettbewerbsbereich von LevelUp Land</strong>
-        und umfasst mehrere Spielwelten. Die erste geöffnete Welt ist <strong>NU World</strong>: 100 Krieger treten ein,
-        die Ziehung erfolgt on-chain, Gewinner werden gekrönt, und Gefallene werden zu Spirits, die über die Epoch mitentscheiden.
+        Willkommen in den Wirbelgewässern in den tiefsten Weiten des Archipels. <strong>Arena ist der Wettbewerbsbereich
+        von LevelUp Land</strong> und besteht aus mehreren Spielwelten mit jeweils eigenem Thema und eigenen Regeln. Die erste
+        geöffnete Welt ist <strong>NU World</strong> — ein Prüfungsfeld, das vollständig auf der BNB Smart Chain läuft:
+        100 Krieger treten an, die Ziehung erfolgt zufällig on-chain, die Sieger werden gekrönt, und die Gefallenen werden zu
+        Spirits — doch sie halten die Stimme, die über das Schicksal der Epoch entscheidet. Dieser Leitfaden nutzt NU World als
+        Beispiel; sobald neue Welten öffnen, gelten deren eigene Regelseiten.
       </p>
     </header>
 
-    <blockquote><p>NU World eröffnet gleichzeitig mehrere Schlachtfelder mit unterschiedlichen Ticketpreisen. Regeln, Chancen und Verteilungsquoten sind identisch; Preise skalieren proportional zum Ticketpreis. <strong>Diese Seite nutzt das 1-USDT-Schlachtfeld als Beispiel.</strong></p></blockquote>
+    <blockquote>
+      <p>
+        NU World betreibt parallel mehrere Schlachtfelder mit unterschiedlichen Ticketpreisen: ein leichtes Schlachtfeld
+        für 1 USDT sowie High-Stakes-Schlachtfelder mit höheren Beträgen. Regeln, Chancen und Verteilungsquoten sind auf allen
+        Schlachtfeldern identisch; die Gewinne skalieren proportional zum Ticketpreis.
+        <strong>Alle Beträge auf dieser Seite beziehen sich auf das 1-USDT-Schlachtfeld.</strong>
+      </p>
+    </blockquote>
 
-    <h2>Schnellstart in 5 Schritten</h2>
+    <h2>Schnellstart: In fünf Schritten dabei</h2>
     <ol>
-      <li><strong>Wallet verbinden</strong> — BSC-Wallet verknüpfen und USDT sowie etwas BNB für Gas bereithalten.</li>
-      <li><strong>Schlachtfeld wählen</strong> — <code>/arena</code> öffnen, eine laufende Runde wählen und Preis, Fortschritt sowie Epoch-Position prüfen.</li>
-      <li><strong>Battle Soul kaufen</strong> — pro Adresse ist 1 Ticket je Runde möglich; danach erhältst du ein Battle-Soul-NFT.</li>
-      <li><strong>Ziehung abwarten</strong> — nach 100 verkauften Tickets liefert Chainlink VRF die Zufallszahl und die Ziehung läuft.</li>
-      <li><strong>Schicksal offenlegen</strong> — Battle Soul beanspruchen, Rang und Spirit-Form sehen und Gewinne direkt erhalten.</li>
+      <li><strong>Wallet verknüpfen</strong> — verknüpfe in deinem Profil deine BSC-Wallet-Adresse und stelle sicher, dass sie genug USDT enthält (plus etwas BNB für On-Chain-Gasgebühren).</li>
+      <li><strong>Schlachtfeld wählen</strong> — öffne <code>/arena</code> und wähle eine Runde mit dem Status „Im Verkauf“ (Schlachtfelder mit unterschiedlichen Ticketpreisen laufen parallel). Jede Karte zeigt den Ticketpreis, den aktuellen Fortschritt (z. B. „87/100 beigetreten“) und die Position der Runde innerhalb der Epoch (z. B. „Kampf 3 / 11“).</li>
+      <li><strong>Battle Soul kaufen</strong> — kaufe das Ticket dieser Runde zum Preis des jeweiligen Schlachtfelds. Jede Adresse kann pro Runde 1 Ticket kaufen. Nach erfolgreichem Kauf erhältst du ein On-Chain-NFT: deine Battle Soul.</li>
+      <li><strong>Ziehung abwarten</strong> — sobald alle 100 Tickets verkauft sind, fordert das System eine Zufallszahl von Chainlink VRF an und führt die Ziehung durch. Den Status kannst du jederzeit unter „My Holdings“ prüfen.</li>
+      <li><strong>Schicksal enthüllen</strong> — beanspruche nach der Ziehung das Ergebnis deiner Battle Soul: Das NFT enthüllt deine Schicksalsstufe und die Gestalt deines Spirits, und ein etwaiger Gewinn landet sofort in deiner Wallet.</li>
     </ol>
 
     <h2>Kernregeln von NU World</h2>
     <div class="table-wrap"><table>
       <thead><tr><th>Regel</th><th>Details</th></tr></thead>
       <tbody>
-        <tr><td>Tickets pro Runde</td><td>100, danach wird die Runde gesperrt</td></tr>
-        <tr><td>Ticketpreis</td><td>Je nach Schlachtfeld, bezahlt in USDT auf BSC</td></tr>
+        <tr><td>Tickets pro Runde</td><td>100 — die Runde wird gesperrt, sobald sie ausverkauft ist</td></tr>
+        <tr><td>Ticketpreis</td><td>Je nach Schlachtfeld (z. B. ein leichtes Schlachtfeld für 1 USDT oder höhere High-Stakes-Beträge), bezahlt in USDT auf BSC</td></tr>
         <tr><td>Kauflimit</td><td>1 Ticket pro Adresse und Runde</td></tr>
-        <tr><td>Verkaufsfenster</td><td>24 Stunden ab Start</td></tr>
-        <tr><td>Nicht ausverkauft</td><td>Runde wird storniert und vollständig erstattet</td></tr>
-        <tr><td>Ziehung</td><td>Chainlink VRF v2.5 und Fisher–Yates-Shuffle</td></tr>
-        <tr><td>Epoch</td><td>11 Runden bilden eine Epoch; am Ende werden der Hauptpreis abgerechnet und der Grand Chieftain gekrönt</td></tr>
+        <tr><td>Verkaufsfenster</td><td>24 Stunden ab Öffnung der Runde</td></tr>
+        <tr><td>Nicht ausverkauft</td><td>Die gesamte Runde wird storniert und zum Ticketpreis vollständig erstattet</td></tr>
+        <tr><td>Ziehungsmechanismus</td><td>Überprüfbare Zufälligkeit über Chainlink VRF v2.5 + Fisher–Yates-Shuffle</td></tr>
+        <tr><td>Epoch</td><td>Je 11 Runden bilden eine Epoch; an ihrem Ende werden der Epoch-Hauptpreis abgerechnet und der Grand Chieftain gekrönt</td></tr>
       </tbody>
     </table></div>
 
-    <h2>Belohnungsstufen</h2>
-    <p>Nach der Ziehung werden 100 Teilnehmer zufällig auf fünf Schicksale verteilt.</p>
+    <h2>Belohnungsstufen: Deine Schicksale auf einen Blick</h2>
+    <p>Nach jeder Ziehung werden die 100 Krieger zufällig auf fünf Schicksalsstufen verteilt (Gewinne für das 1-USDT-Schlachtfeld; die Renditefaktoren gelten auf allen Schlachtfeldern):</p>
     <div class="table-wrap"><table>
-      <thead><tr><th>Schicksal</th><th>Anzahl</th><th>Chance</th><th>Gewinn</th><th>Rendite</th></tr></thead>
+      <thead><tr><th>Schicksal</th><th>Anzahl</th><th>Chance</th><th>Gewinn</th><th>Rendite</th><th>Mind Diamonds / Person</th></tr></thead>
       <tbody>
-        <tr><td>👑 Sovereign</td><td>1</td><td>1%</td><td>14,25 USDT</td><td>14,25×</td></tr>
-        <tr><td>🚩 Bannerlord</td><td>5</td><td>5%</td><td>5,70 USDT</td><td>5,7×</td></tr>
-        <tr><td>🏅 Glory</td><td>10</td><td>10%</td><td>2,85 USDT</td><td>2,85×</td></tr>
-        <tr><td>🛡️ Survivor</td><td>40</td><td>40%</td><td>0,475 USDT</td><td>0,475×</td></tr>
-        <tr><td>⚰️ Fallen</td><td>44</td><td>44%</td><td>0, erhält die Spirit-Wahl</td><td>—</td></tr>
+        <tr><td>👑 Sovereign</td><td>1</td><td>1%</td><td>14,25 USDT</td><td>14,25×</td><td>0,75</td></tr>
+        <tr><td>🚩 Bannerlord</td><td>5</td><td>5%</td><td>5,70 USDT</td><td>5,7×</td><td>0,3</td></tr>
+        <tr><td>🏅 Glory</td><td>10</td><td>10%</td><td>2,85 USDT</td><td>2,85×</td><td>0,15</td></tr>
+        <tr><td>🛡️ Survivor</td><td>40</td><td>40%</td><td>0,475 USDT</td><td>0,475×</td><td>0,025</td></tr>
+        <tr><td>⚰️ Fallen</td><td>44</td><td>44%</td><td>0 (erhält die Spirit-Wahl)</td><td>—</td><td>0</td></tr>
       </tbody>
     </table></div>
     <ul>
-      <li><strong>90,25%</strong> des Rundenpools werden als Gewinne ausgezahlt; <strong>56%</strong> der Teilnehmer erhalten USDT.</li>
-      <li><strong>5%</strong> fließen in den Epoch-Hauptpreis, <strong>4,75%</strong> sind Plattformreserve; ein Teil fließt zurück in <a href="/de/level/">Level</a>.</li>
-      <li>Sovereign, Bannerlords und Glory-Leader erscheinen auf dem Unterstützungsboard und konkurrieren um den Epoch-Preis.</li>
+      <li>Jede Runde schüttet <strong>90,25%</strong> des Ticketpools als Gewinne aus (90,25 USDT auf dem 1-USDT-Schlachtfeld), und <strong>56% der Teilnehmer</strong> gehen mit USDT nach Hause.</li>
+      <li>Weitere <strong>5%</strong> des Pools fließen in den Epoch-Hauptpreispool; <strong>4,75%</strong> sind Plattformreserve, für die Mind Diamonds in gleicher Höhe ausgegeben werden (auf dem 1-USDT-Schlachtfeld insgesamt 4,75 pro Runde, siehe Tabelle oben). Ein Teil der Plattformreserve fließt außerdem in den Growth Incentive Pool und kommt Nutzern zugute, die in <a href="/de/level/">Level</a> kontinuierlich wachsen.</li>
+      <li>Der Sovereign und die Leader nehmen zudem ihren Platz auf dem Unterstützungsboard dieser Runde ein und erhalten das Recht, um den Epoch-Hauptpreis und den Thron des Grand Chieftain zu kämpfen.</li>
     </ul>
+    <h3>💎 Mind Diamonds</h3>
+    <p>
+      <strong>Mind Diamonds</strong> sind die ökosysteminterne Ressource von NU World und können im Verhältnis <strong>1 : 1</strong> zurück in USDT getauscht werden. So geht’s: <strong>Home → Me → Belohnungen tauschen</strong>.
+    </p>
 
-    <h2>Fallen und Spirit-Wahl</h2>
-    <p>Die 44 Fallen werden zu <strong>Spirits</strong> und treffen eine endgültige Wahl zwischen zwei Optionen.</p>
-    <h3>🔥 Spirit einschmelzen</h3>
-    <p>Wandle den Spirit in <strong>Mind Crystals</strong> um, eine NU-World-Ressource für Verbesserungen, Evolution und saisonale Spielinhalte. Sie können nicht zurück in USDT umgewandelt werden.</p>
+    <h2>Die Gefallenen: Die Wahl des Spirits</h2>
+    <p>
+      In NU World ist der Fall nicht das Ende. Die Battle Souls der 44 Fallen werden zu <strong>Spirits</strong>, und jeder
+      Spirit kann eine <strong>unumkehrbare</strong> Entscheidung treffen – wer abstimmt, hat die Chance auf eine <strong>USDT</strong>-Belohnung (siehe unten):
+    </p>
     <h3>🗳️ Leader unterstützen</h3>
-    <p>Gib einem Leader auf dem Board deine einzige Stimme. Die Stimme wird on-chain gespeichert, ist endgültig und kann eine Beteiligung am Epoch-Preis ermöglichen.</p>
+    <p>
+      Gib deine einzige Stimme (Gewicht 1,0) einem beliebigen Leader auf dem Unterstützungsboard dieser Runde. Die Stimme wird
+      on-chain gespeichert und ist nach Abgabe <strong>endgültig — sie kann weder geändert noch zurückgezogen werden</strong>.
+      Deine Stimme zählt für die Krönung des Grand Chieftain am Ende der Epoch — und Spirits, die an der Unterstützung
+      teilnehmen, haben die Chance, am Epoch-Hauptpreis beteiligt zu werden (siehe unten).
+    </p>
 
-    <h2>Epoch-Hauptpreis</h2>
-    <p>Nach 11 Runden sammelt das 1-USDT-Schlachtfeld <strong>55 USDT</strong>.</p>
+    <h2>Der Epoch-Hauptpreis und die Krönung des Grand Chieftain</h2>
+    <p>
+      Je 11 Runden bilden eine <strong>Epoch</strong>. 5% des Ticketpools jeder Runde fließen in den Hauptpreispool
+      (5 USDT pro Runde auf dem 1-USDT-Schlachtfeld), der sich bis zum Ende der Epoch auf <strong>55 USDT</strong> summiert
+      und wie folgt abgerechnet wird:
+    </p>
     <div class="table-wrap"><table>
       <thead><tr><th>Empfänger</th><th>Anteil</th><th>Betrag</th></tr></thead>
       <tbody>
-        <tr><td>Leader auf dem Unterstützungsboard</td><td>90%</td><td>49,5 USDT</td></tr>
-        <tr><td>Per Los gezogene abstimmende Spirits (etwa 1% der Wähler)</td><td>10%</td><td>5,5 USDT</td></tr>
+        <tr><td>Leader auf dem Unterstützungsboard</td><td>≈90,9%</td><td>50 USDT</td></tr>
+        <tr><td>Unterstützende Spirits (5 Glückliche werden zufällig gezogen, je 1 USDT)</td><td>≈9,1%</td><td>5 USDT</td></tr>
       </tbody>
     </table></div>
-    <p>Am Ende der Epoch wird der Leader mit den meisten Unterstützungsstimmen zum <strong>Grand Chieftain</strong> gekrönt; sein Name wird dauerhaft in der Chronik von NU World verewigt.</p>
+    <p>
+      Am Ende der Epoch wird der Leader mit den meisten Unterstützungsstimmen zum <strong>Grand Chieftain</strong> gekrönt;
+      sein Name wird für immer in die Chronik von NU World eingeschrieben.
+    </p>
 
-    <h2>Claims, Rückerstattung und Fairness</h2>
+    <h2>Claims, Rückerstattungen und häufige Aktionen</h2>
+    <h3>Gewinn beanspruchen</h3>
     <ul>
-      <li>Gewinne werden in “My Holdings” beansprucht und folgen dem aktuellen NFT-Inhaber.</li>
-      <li>Nicht ausverkaufte Runden werden nach 24 Stunden storniert und vollständig erstattet.</li>
-      <li>Zufall kommt von Chainlink VRF v2.5 und ist on-chain überprüfbar.</li>
-      <li>Gewinn-, Hauptpreis- und Reservequoten sind im Smart Contract festgeschrieben.</li>
+      <li>Gehe nach der Ziehung zu „My Holdings“ und klicke bei jeder Battle Soul auf Claim, um ihr Ergebnis zu enthüllen und den Gewinn einzufordern.</li>
+      <li>Gewinne landen sofort in deiner Wallet — <strong>keine Sperrfrist, keine verzögerten Auszahlungen</strong>. Schlägt ein On-Chain-Transfer vorübergehend fehl, wird der Betrag deinem ausstehenden Guthaben gutgeschrieben und kann jederzeit erneut beansprucht werden.</li>
+      <li>Das Claim-Recht liegt beim <strong>aktuellen Inhaber</strong> des NFTs; jede Battle Soul kann nur einmal beansprucht werden.</li>
+    </ul>
+    <h3>Rückerstattungen</h3>
+    <ul>
+      <li>Werden in einer Runde innerhalb von 24 Stunden nicht alle 100 Tickets verkauft, wird sie automatisch storniert.</li>
+      <li>Käufer erhalten den vollen Ticketpreis bis auf den letzten Cent zurück; das Battle-Soul-NFT wird zu einer „leeren Truhe“ als Andenken.</li>
+    </ul>
+
+    <h2>Fairness</h2>
+    <ul>
+      <li><strong>Der Zufall stammt von Chainlink VRF v2.5</strong>: Erzeugung des Zufalls-Seeds und kryptografischer Nachweis liegen vollständig on-chain und sind für jeden überprüfbar — die Plattform kann das Ergebnis der Ziehung weder vorhersehen noch manipulieren.</li>
+      <li><strong>Verteilungsquoten sind fest im Smart Contract codiert</strong>: Gewinnstufen, Einzahlungen in den Hauptpreispool und die Quote der Plattformreserve sind im Vertrag festgeschrieben — nach Öffnung einer Runde kann sie niemand mehr ändern.</li>
+      <li><strong>Ein Ticket pro Adresse</strong>: So ist jede Runde ein Schlachtfeld aus 100 echten Teilnehmern.</li>
     </ul>
 
     <h2>FAQ</h2>
     <h3>F: Wie hängen Arena und NU World zusammen?</h3>
-    <p>Arena ist der Wettbewerbsbereich; NU World ist die erste geöffnete Welt.</p>
-    <h3>F: Was brauche ich vor dem Kampf?</h3>
-    <p>Eine BSC-Wallet, USDT für das Ticket, etwas BNB für Gas und ein verbundenes LevelUp-Land-Konto.</p>
-    <h3>F: Kann ich meine Stimme ändern?</h3>
-    <p>Nein. Unterstützung ist eine endgültige On-Chain-Aktion.</p>
+    <p>
+      Arena ist der Wettbewerbsbereich der Plattform (die übergeordnete Ebene) und umfasst mehrere unabhängige Spielwelten;
+      NU World ist die erste offiziell geöffnete Welt. Künftige Welten erhalten eigene Themen und wirtschaftliche Parameter,
+      jeweils mit einem passenden Welt-Leitfaden.
+    </p>
+    <h3>F: Was brauche ich, bevor ich an einem Kampf teilnehmen kann?</h3>
+    <p>Eine BSC-Wallet, genug USDT für den Ticketpreis des gewählten Schlachtfelds (leichte Schlachtfelder ab 1 USDT), etwas BNB für Gas und ein LevelUp-Land-Konto mit verknüpfter Wallet.</p>
+    <h3>F: Ich habe ein Ticket gekauft, aber die Ziehung findet nicht statt — was nun?</h3>
+    <p>Die Ziehung wartet, bis alle 100 Tickets der Runde verkauft sind. Ist die Runde nach 24 Stunden nicht ausverkauft, wird sie storniert und du kannst eine vollständige Rückerstattung beanspruchen.</p>
+    <h3>F: Können Battle-Soul-NFTs übertragen werden?</h3>
+    <p>Ja. Eine Battle Soul ist ein Standard-On-Chain-NFT und kann übertragen werden, bevor ihr Gewinn beansprucht wurde; das Claim-Recht geht mit dem NFT auf den aktuellen Inhaber über.</p>
+    <h3>F: Ich habe den falschen Leader unterstützt — kann ich meine Stimme ändern?</h3>
+    <p>Nein. Unterstützung ist eine unumkehrbare On-Chain-Aktion — wähle den Leader, den du unterstützen möchtest, vor der Abstimmung sorgfältig aus.</p>
+    <h3>F: Können Mind Diamonds zurück in USDT umgewandelt werden?</h3>
+    <p>Ja. Mind Diamonds können im Verhältnis <strong>1 : 1</strong> zurück in USDT getauscht werden – über Home → Me → Belohnungen tauschen.</p>
+    <h3>F: Wohin fließen die von der Plattform einbehaltenen Mittel?</h3>
+    <p>
+      Von der Plattformreserve von 4,75% des Pools jeder Runde (4,75 USDT auf dem 1-USDT-Schlachtfeld) fließt ein Teil in den
+      Growth Incentive Pool, der Nutzer belohnt, die entlang der <a href="/de/level/">Level-Reisekarte</a> kontinuierlich wachsen —
+      die Energie der Arena fließt letztlich an diejenigen zurück, die beharrlich wachsen.
+    </p>
 
-    <p class="page-note">Arena ist kompetitives On-Chain-Gameplay. Verstehe die Regeln, spiele verantwortungsvoll und genieße die Welt.</p>
+    <p class="page-note">
+      Hinweis zum verantwortungsvollen Spielen: Arena ist kompetitives On-Chain-Gameplay, und das Ergebnis jeder Runde wird
+      durch überprüfbaren Zufall bestimmt. Spiele im Rahmen deiner Möglichkeiten und genieße das Spiel und seine Geschichte
+      um ihrer selbst willen.
+    </p>
   </article>
 </DocsLayout>
