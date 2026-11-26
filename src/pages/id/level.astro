@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 ---
 
 <DocsLayout
   title="Panduan Sistem Pertumbuhan Level"
-  description="Panduan sistem pertumbuhan LevelUp Land: Peta Voyage, 8 pulau, check-in harian, kelangkaan hadiah, dan Growth Incentive Pool."
+  description={SHOW_ARENA
+    ? "Panduan sistem pertumbuhan LevelUp Land: Peta Voyage, 8 pulau, check-in harian, kelangkaan hadiah, dan Growth Incentive Pool."
+    : "Panduan sistem pertumbuhan LevelUp Land: Peta Voyage, 8 pulau, check-in harian, dan kelangkaan hadiah."}
   slug="level"
   locale="id"
 >
@@ -41,7 +44,7 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <thead><tr><th>Kelangkaan</th><th>Growth Points</th><th>Bonus umum</th></tr></thead>
       <tbody>
         <tr><td>⚪ Common</td><td>+30 💎</td><td>Ransum standar</td></tr>
-        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Misalnya +1 kesempatan undian Arena</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "Misalnya +1 kesempatan undian Arena" : "Misalnya +1 kesempatan undian"}</td></tr>
         <tr><td>🟣 Epic</td><td>+60 💎</td><td>Misalnya +2 kesempatan undian</td></tr>
         <tr><td>🟡 Legendary</td><td>+100 💎</td><td>Badge, bonus bertumpuk, dan hadiah langka</td></tr>
       </tbody>
@@ -54,9 +57,13 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <li>Penukaran, toko, tiket gameplay, dan utilitas lain akan dibuka seiring perluasan peta.</li>
     </ul>
 
-    <h2>Growth Incentive Pool</h2>
-    <blockquote><p>Sebagian cadangan dari setiap ronde Arena dialirkan ke pool khusus untuk memberi hadiah kepada pengguna yang terus bertumbuh di Level.</p></blockquote>
-    <p>Ketekunan di Peta Voyage mengumpulkan poin sekaligus membuka peluang menerima boost, tiket Battle Soul, badge, dan manfaat lain. Detail sumber dananya ada di <a href="/id/whitepaper/">whitepaper</a>.</p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>Growth Incentive Pool</h2>
+      <blockquote><p>Sebagian cadangan dari setiap ronde Arena dialirkan ke pool khusus untuk memberi hadiah kepada pengguna yang terus bertumbuh di Level.</p></blockquote>
+      <p>Ketekunan di Peta Voyage mengumpulkan poin sekaligus membuka peluang menerima boost, tiket Battle Soul, badge, dan manfaat lain. Detail sumber dananya ada di <a href="/id/whitepaper/">whitepaper</a>.</p>
+      </Fragment>
+    )}
 
     <h2>Koneksi dengan Quest</h2>
     <ul>

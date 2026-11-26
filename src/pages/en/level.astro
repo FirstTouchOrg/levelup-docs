@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 ---
 
 <DocsLayout
   title="Level Growth System Guide"
-  description="LevelUp Land growth system guide: the Voyage Map, 8 islands, daily check-ins, reward rarities, and the Growth Incentive Pool."
+  description={SHOW_ARENA
+    ? "LevelUp Land growth system guide: the Voyage Map, 8 islands, daily check-ins, reward rarities, and the Growth Incentive Pool."
+    : "LevelUp Land growth system guide: the Voyage Map, 8 islands, daily check-ins, and reward rarities."}
   slug="level"
   locale="en"
 >
@@ -56,7 +59,7 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <thead><tr><th>Rarity</th><th>Growth Points</th><th>Typical bonus</th></tr></thead>
       <tbody>
         <tr><td>⚪ Common</td><td>+30 💎</td><td>Standard rations for the daily voyage</td></tr>
-        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Bonuses such as +1 Arena draw chance</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "Bonuses such as +1 Arena draw chance" : "Bonuses such as +1 draw chance"}</td></tr>
         <tr><td>🟣 Epic</td><td>+60 💎</td><td>Bonuses such as +2 draw chances</td></tr>
         <tr><td>🟡 Legendary</td><td>+100 💎</td><td>Rare spoils: badges, stacked bonuses, and more</td></tr>
       </tbody>
@@ -73,18 +76,22 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <li>More ways to spend points (redemptions, a shop, gameplay tickets, and more) will open as the map expands.</li>
     </ul>
 
-    <h2>The Growth Incentive Pool: The Arena's Current Flows Back</h2>
-    <blockquote>
-      <p>From every round of Arena competition, the platform retains a portion of the funds and channels it into the Growth Incentive Pool — dedicated to rewarding users who keep growing in Level.</p>
-    </blockquote>
-    <p>
-      Which means: every day you persist on the Voyage Map does more than stack points —
-      the heat of the entire platform's competition is storing up rewards for those who stay the course.
-      As your level rises and your voyage streak milestones fall, rewards from the incentive pool
-      (point boosts, Arena Battle Soul tickets, badges, and more) will keep tilting your way.
-      Curious where the funds come from? Read the Arena economic model chapter of the
-      <a href="/en/whitepaper/">whitepaper</a>.
-    </p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>The Growth Incentive Pool: The Arena's Current Flows Back</h2>
+      <blockquote>
+        <p>From every round of Arena competition, the platform retains a portion of the funds and channels it into the Growth Incentive Pool — dedicated to rewarding users who keep growing in Level.</p>
+      </blockquote>
+      <p>
+        Which means: every day you persist on the Voyage Map does more than stack points —
+        the heat of the entire platform's competition is storing up rewards for those who stay the course.
+        As your level rises and your voyage streak milestones fall, rewards from the incentive pool
+        (point boosts, Arena Battle Soul tickets, badges, and more) will keep tilting your way.
+        Curious where the funds come from? Read the Arena economic model chapter of the
+        <a href="/en/whitepaper/">whitepaper</a>.
+      </p>
+      </Fragment>
+    )}
 
     <h2>How Level Connects with Quest</h2>
     <ul>

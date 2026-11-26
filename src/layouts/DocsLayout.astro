@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { LOCALES, UI, DEFAULT_LOCALE, localePath, type LocaleCode } from '../i18n';
+import { SHOW_ARENA } from '../config';
 
 interface Props {
   title: string;
@@ -28,7 +29,7 @@ const nav = [
   { slug: 'whitepaper', label: ui.nav.whitepaper },
   { slug: 'arena', label: ui.nav.arena },
   { slug: 'level', label: ui.nav.level },
-];
+].filter((item) => SHOW_ARENA || item.slug !== 'arena');
 ---
 
 <html lang={meta.lang}>

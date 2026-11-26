@@ -1,15 +1,19 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 
-const cards = [
+const allCards = [
   {
     href: '/vi/whitepaper/',
     tag: 'Whitepaper',
     title: 'Sách trắng dự án',
-    desc: 'Toàn cảnh thế giới quan, bản đồ sản phẩm và mô hình kinh tế Arena của LevelUp Land — một tấm hải đồ dành cho mọi nhà hàng hải.',
+    desc: SHOW_ARENA
+      ? 'Toàn cảnh thế giới quan, bản đồ sản phẩm và mô hình kinh tế Arena của LevelUp Land — một tấm hải đồ dành cho mọi nhà hàng hải.'
+      : 'Toàn cảnh thế giới quan, bản đồ sản phẩm và tuyên ngôn giá trị của LevelUp Land — một tấm hải đồ dành cho mọi nhà hàng hải.',
   },
   {
     href: '/vi/arena/',
+    arena: true,
     tag: 'Arena',
     title: 'Hướng dẫn Đấu Trường',
     desc: 'Bước vào mảng thi đấu và thế giới đầu tiên NU World: vé Chiến Hồn, mở thưởng trên chuỗi, các bậc phần thưởng, Anh Linh suy tôn thủ lĩnh và giải thưởng lớn Kỷ Nguyên.',
@@ -21,6 +25,9 @@ const cards = [
     desc: 'Chuyến hải trình hôm nay, kinh nghiệm và cấp độ, điểm danh liên tục cùng phần thưởng trưởng thành — khám phá con đường thăng cấp từng bước của nhà hàng hải trong bạn.',
   },
 ];
+
+// SHOW_ARENA 為 false 時不展示 Arena 卡片
+const cards = allCards.filter((c) => SHOW_ARENA || !c.arena);
 ---
 
 <DocsLayout title="Trang chủ" slug="" locale="vi" transparentHeader>
@@ -35,12 +42,12 @@ const cards = [
       <div class="hero-chips">
         <span class="stat-chip">Trưởng thành bền bỉ</span>
         <span class="stat-chip">Phần thưởng từ các dự án</span>
-        <span class="stat-chip">Thi đấu trên chuỗi</span>
+        {SHOW_ARENA && <span class="stat-chip">Thi đấu trên chuỗi</span>}
       </div>
     </div>
   </section>
 
-  <section class="card-grid">
+  <section class="card-grid" style={`--card-cols: ${cards.length}`}>
     {cards.map((c) => (
       <a class="glass-card doc-card" href={c.href}>
         <span class="doc-tag">{c.tag}</span>

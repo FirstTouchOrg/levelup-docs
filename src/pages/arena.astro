@@ -1,5 +1,10 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../config';
+import { localePath } from '../i18n';
+
+// Arena 暫不對外展示時，跳轉回本語言首頁
+if (!SHOW_ARENA) return Astro.redirect(localePath('zh-hant', ''));
 ---
 
 <DocsLayout

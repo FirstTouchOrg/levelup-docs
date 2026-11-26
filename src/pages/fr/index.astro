@@ -1,15 +1,19 @@
 ﻿---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 
-const cards = [
+const allCards = [
   {
     href: '/fr/whitepaper/',
     tag: 'Whitepaper',
     title: 'Livre blanc du projet',
-    desc: 'Toute l’histoire de LevelUp Land : univers, carte produit et modèle économique d’Arena, sous forme de carte pour chaque navigateur.',
+    desc: SHOW_ARENA
+      ? 'Toute l’histoire de LevelUp Land : univers, carte produit et modèle économique d’Arena, sous forme de carte pour chaque navigateur.'
+      : 'Toute l’histoire de LevelUp Land : univers, carte produit et proposition de valeur, sous forme de carte pour chaque navigateur.',
   },
   {
     href: '/fr/arena/',
+    arena: true,
     tag: 'Arena',
     title: 'Guide Arena',
     desc: 'Entrez dans Arena et son premier monde, NU World : tickets Battle Soul, tirages on-chain, niveaux de récompense, soutiens des Spirits et grand prix d’Epoch.',
@@ -21,6 +25,9 @@ const cards = [
     desc: 'Today’s Voyage, XP, niveaux, séries et récompenses de progression : découvrez comment votre navigateur progresse jour après jour.',
   },
 ];
+
+// SHOW_ARENA 為 false 時不展示 Arena 卡片
+const cards = allCards.filter((c) => SHOW_ARENA || !c.arena);
 ---
 
 <DocsLayout title="Accueil" slug="" locale="fr" transparentHeader>
@@ -35,12 +42,12 @@ const cards = [
       <div class="hero-chips">
         <span class="stat-chip">Croissance continue</span>
         <span class="stat-chip">Récompenses partenaires</span>
-        <span class="stat-chip">Arena on-chain</span>
+        {SHOW_ARENA && <span class="stat-chip">Arena on-chain</span>}
       </div>
     </div>
   </section>
 
-  <section class="card-grid">
+  <section class="card-grid" style={`--card-cols: ${cards.length}`}>
     {cards.map((c) => (
       <a class="glass-card doc-card" href={c.href}>
         <span class="doc-tag">{c.tag}</span>

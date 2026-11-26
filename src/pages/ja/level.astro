@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 ---
 
 <DocsLayout
   title="Level 成長システムガイド"
-  description="LevelUp Land の成長システムガイド：航海マップ、8 つの島、毎日のチェックイン、報酬レアリティ、成長インセンティブプール。"
+  description={SHOW_ARENA
+    ? "LevelUp Land の成長システムガイド：航海マップ、8 つの島、毎日のチェックイン、報酬レアリティ、成長インセンティブプール。"
+    : "LevelUp Land の成長システムガイド：航海マップ、8 つの島、毎日のチェックイン、報酬レアリティ。"}
   slug="level"
   locale="ja"
 >
@@ -46,8 +49,8 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <thead><tr><th>レアリティ</th><th>成長ポイント</th><th>代表的なボーナス</th></tr></thead>
       <tbody>
         <tr><td>⚪ Common</td><td>+30 💎</td><td>日々の航海の基本補給</td></tr>
-        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Arena 抽選チャンス +1 など</td></tr>
-        <tr><td>🟣 Epic</td><td>+60 💎</td><td>Arena 抽選チャンス +2 など</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "Arena 抽選チャンス +1 など" : "抽選チャンス +1 など"}</td></tr>
+        <tr><td>🟣 Epic</td><td>+60 💎</td><td>{SHOW_ARENA ? "Arena 抽選チャンス +2 など" : "抽選チャンス +2 など"}</td></tr>
         <tr><td>🟡 Legendary</td><td>+100 💎</td><td>バッジ、重ね掛けボーナス、特別報酬など</td></tr>
       </tbody>
     </table></div>
@@ -60,15 +63,19 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <li>交換、ショップ、ゲームチケットなど、ポイントの使い道は今後拡張されます。</li>
     </ul>
 
-    <h2>成長インセンティブプール</h2>
-    <blockquote>
-      <p>Arena の各ラウンドでプラットフォームが保留する資金の一部は、Level で継続的に成長するユーザーへ還元されます。</p>
-    </blockquote>
-    <p>
-      航海マップで毎日続けることは、単にポイントを積み上げるだけではありません。Arena の熱量が成長インセンティブプールに蓄積され、
-      レベルや継続マイルストーンに応じて、ポイント加算、Battle Soul チケット、バッジなどとして戻ってきます。
-      資金の流れは <a href="/ja/whitepaper/">ホワイトペーパー</a> の Arena 経済モデルを参照してください。
-    </p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>成長インセンティブプール</h2>
+      <blockquote>
+        <p>Arena の各ラウンドでプラットフォームが保留する資金の一部は、Level で継続的に成長するユーザーへ還元されます。</p>
+      </blockquote>
+      <p>
+        航海マップで毎日続けることは、単にポイントを積み上げるだけではありません。Arena の熱量が成長インセンティブプールに蓄積され、
+        レベルや継続マイルストーンに応じて、ポイント加算、Battle Soul チケット、バッジなどとして戻ってきます。
+        資金の流れは <a href="/ja/whitepaper/">ホワイトペーパー</a> の Arena 経済モデルを参照してください。
+      </p>
+      </Fragment>
+    )}
 
     <h2>Quest とのつながり</h2>
     <ul>
