@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 ---
 
 <DocsLayout
   title="Hướng dẫn hệ thống trưởng thành Level"
-  description="Hướng dẫn hệ thống trưởng thành LevelUp Land: Hải Đồ, 8 hòn đảo, điểm danh hằng ngày, độ hiếm phần thưởng và Quỹ Khích Lệ Trưởng Thành."
+  description={SHOW_ARENA
+    ? "Hướng dẫn hệ thống trưởng thành LevelUp Land: Hải Đồ, 8 hòn đảo, điểm danh hằng ngày, độ hiếm phần thưởng và Quỹ Khích Lệ Trưởng Thành."
+    : "Hướng dẫn hệ thống trưởng thành LevelUp Land: Hải Đồ, 8 hòn đảo, điểm danh hằng ngày và độ hiếm phần thưởng."}
   slug="level"
   locale="vi"
 >
@@ -54,7 +57,7 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <thead><tr><th>Độ hiếm</th><th>Điểm Trưởng Thành</th><th>Phần cộng thêm tiêu biểu</th></tr></thead>
       <tbody>
         <tr><td>⚪ Thường Common</td><td>+30 💎</td><td>Tiếp tế tiêu chuẩn cho chuyến hải trình thường nhật</td></tr>
-        <tr><td>🔵 Hiếm Rare</td><td>+40 💎</td><td>+1 lượt quay thưởng Arena cùng các phần cộng thêm khác</td></tr>
+        <tr><td>🔵 Hiếm Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "+1 lượt quay thưởng Arena cùng các phần cộng thêm khác" : "+1 lượt quay thưởng cùng các phần cộng thêm khác"}</td></tr>
         <tr><td>🟣 Sử Thi Epic</td><td>+60 💎</td><td>+2 lượt quay thưởng cùng các phần cộng thêm khác</td></tr>
         <tr><td>🟡 Huyền Thoại Legendary</td><td>+100 💎</td><td>Huy hiệu, cộng thêm nhiều tầng và các chiến lợi phẩm quý hiếm</td></tr>
       </tbody>
@@ -71,16 +74,20 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <li>Nhiều kịch bản tiêu điểm hơn (quy đổi, cửa hàng, vé tham gia lối chơi, v.v.) sẽ lần lượt mở cùng với sự mở rộng của bản đồ.</li>
     </ul>
 
-    <h2>Quỹ Khích Lệ Trưởng Thành: Hải lưu đáp lễ từ Arena</h2>
-    <blockquote>
-      <p>Ở mỗi vòng thi đấu của Arena, nền tảng đều giữ lại một phần vốn rót vào "Quỹ Khích Lệ Trưởng Thành", chuyên dùng để tưởng thưởng những người dùng bền bỉ trưởng thành trong Level.</p>
-    </blockquote>
-    <p>
-      Điều đó có nghĩa là: mỗi lần kiên trì của bạn trên tấm Hải Đồ không chỉ là tích điểm —
-      sức nóng thi đấu của cả nền tảng đang tích góp phần đáp lễ cho những người bền bỉ. Khi cấp độ của bạn tăng lên và các cột mốc hải trình liên tục được chinh phục,
-      phần thưởng từ quỹ khích lệ (điểm cộng thêm, vé Chiến Hồn Arena, huy hiệu, v.v.) sẽ ngày càng nghiêng về phía bạn.
-      Muốn biết nguồn vốn đến từ đâu? Hãy đọc chương mô hình kinh tế Arena trong <a href="/vi/whitepaper/">sách trắng</a>.
-    </p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>Quỹ Khích Lệ Trưởng Thành: Hải lưu đáp lễ từ Arena</h2>
+      <blockquote>
+        <p>Ở mỗi vòng thi đấu của Arena, nền tảng đều giữ lại một phần vốn rót vào "Quỹ Khích Lệ Trưởng Thành", chuyên dùng để tưởng thưởng những người dùng bền bỉ trưởng thành trong Level.</p>
+      </blockquote>
+      <p>
+        Điều đó có nghĩa là: mỗi lần kiên trì của bạn trên tấm Hải Đồ không chỉ là tích điểm —
+        sức nóng thi đấu của cả nền tảng đang tích góp phần đáp lễ cho những người bền bỉ. Khi cấp độ của bạn tăng lên và các cột mốc hải trình liên tục được chinh phục,
+        phần thưởng từ quỹ khích lệ (điểm cộng thêm, vé Chiến Hồn Arena, huy hiệu, v.v.) sẽ ngày càng nghiêng về phía bạn.
+        Muốn biết nguồn vốn đến từ đâu? Hãy đọc chương mô hình kinh tế Arena trong <a href="/vi/whitepaper/">sách trắng</a>.
+      </p>
+      </Fragment>
+    )}
 
     <h2>Liên kết với Quest</h2>
     <ul>

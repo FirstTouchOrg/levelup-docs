@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 ---
 
 <DocsLayout
   title="Level-Wachstumssystem"
-  description="Leitfaden zum Wachstumssystem von LevelUp Land: Reisekarte, 8 Inseln, tägliche Check-ins, Belohnungsseltenheit und Growth Incentive Pool."
+  description={SHOW_ARENA
+    ? "Leitfaden zum Wachstumssystem von LevelUp Land: Reisekarte, 8 Inseln, tägliche Check-ins, Belohnungsseltenheit und Growth Incentive Pool."
+    : "Leitfaden zum Wachstumssystem von LevelUp Land: Reisekarte, 8 Inseln, tägliche Check-ins und Belohnungsseltenheit."}
   slug="level"
   locale="de"
 >
@@ -41,7 +44,7 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <thead><tr><th>Seltenheit</th><th>Growth Points</th><th>Typischer Bonus</th></tr></thead>
       <tbody>
         <tr><td>⚪ Common</td><td>+30 💎</td><td>Standardvorräte</td></tr>
-        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Zum Beispiel +1 Arena-Ziehungschance</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "Zum Beispiel +1 Arena-Ziehungschance" : "Zum Beispiel +1 Ziehungschance"}</td></tr>
         <tr><td>🟣 Epic</td><td>+60 💎</td><td>Zum Beispiel +2 Chancen</td></tr>
         <tr><td>🟡 Legendary</td><td>+100 💎</td><td>Badges, gestapelte Boni und seltene Beute</td></tr>
       </tbody>
@@ -54,9 +57,13 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <li>Einlösungen, Shop, Gameplay-Tickets und weitere Nutzungen folgen mit der Erweiterung der Karte.</li>
     </ul>
 
-    <h2>Growth Incentive Pool</h2>
-    <blockquote><p>Ein Teil der Reserve jeder Arena-Runde fließt in einen Pool für Nutzer, die in Level kontinuierlich wachsen.</p></blockquote>
-    <p>Durch Beständigkeit kannst du Boosts, Battle-Soul-Tickets, Badges und weitere Vorteile erhalten. Die Finanzflüsse stehen im <a href="/de/whitepaper/">Whitepaper</a>.</p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>Growth Incentive Pool</h2>
+      <blockquote><p>Ein Teil der Reserve jeder Arena-Runde fließt in einen Pool für Nutzer, die in Level kontinuierlich wachsen.</p></blockquote>
+      <p>Durch Beständigkeit kannst du Boosts, Battle-Soul-Tickets, Badges und weitere Vorteile erhalten. Die Finanzflüsse stehen im <a href="/de/whitepaper/">Whitepaper</a>.</p>
+      </Fragment>
+    )}
 
     <h2>Verbindung mit Quest</h2>
     <ul>

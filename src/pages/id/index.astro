@@ -1,15 +1,19 @@
 ﻿---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 
-const cards = [
+const allCards = [
   {
     href: '/id/whitepaper/',
     tag: 'Whitepaper',
     title: 'Whitepaper Proyek',
-    desc: 'Kisah lengkap LevelUp Land: pandangan dunia, peta produk, dan model ekonomi Arena. Sebuah peta untuk setiap pelaut.',
+    desc: SHOW_ARENA
+      ? 'Kisah lengkap LevelUp Land: pandangan dunia, peta produk, dan model ekonomi Arena. Sebuah peta untuk setiap pelaut.'
+      : 'Kisah lengkap LevelUp Land: pandangan dunia, peta produk, dan nilai platform. Sebuah peta untuk setiap pelaut.',
   },
   {
     href: '/id/arena/',
+    arena: true,
     tag: 'Arena',
     title: 'Panduan Arena',
     desc: 'Masuki Arena dan dunia pertamanya, NU World: tiket Battle Soul, undian on-chain, tingkat hadiah, dukungan Spirit, dan hadiah besar Epoch.',
@@ -21,6 +25,9 @@ const cards = [
     desc: 'Today’s Voyage, XP dan level, streak, serta hadiah pertumbuhan — pahami bagaimana perjalanan pelautmu naik level hari demi hari.',
   },
 ];
+
+// SHOW_ARENA 為 false 時不展示 Arena 卡片
+const cards = allCards.filter((c) => SHOW_ARENA || !c.arena);
 ---
 
 <DocsLayout title="Beranda" slug="" locale="id" transparentHeader>
@@ -35,12 +42,12 @@ const cards = [
       <div class="hero-chips">
         <span class="stat-chip">Terus Bertumbuh</span>
         <span class="stat-chip">Hadiah Partner</span>
-        <span class="stat-chip">Arena On-Chain</span>
+        {SHOW_ARENA && <span class="stat-chip">Arena On-Chain</span>}
       </div>
     </div>
   </section>
 
-  <section class="card-grid">
+  <section class="card-grid" style={`--card-cols: ${cards.length}`}>
     {cards.map((c) => (
       <a class="glass-card doc-card" href={c.href}>
         <span class="doc-tag">{c.tag}</span>

@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../config';
 ---
 
 <DocsLayout
   title="Level 成長體系指南"
-  description="LevelUp Land 成長體系指南：航海圖、8 座島嶼、每日簽到、獎勵稀有度與成長激勵池。"
+  description={SHOW_ARENA
+    ? "LevelUp Land 成長體系指南：航海圖、8 座島嶼、每日簽到、獎勵稀有度與成長激勵池。"
+    : "LevelUp Land 成長體系指南：航海圖、8 座島嶼、每日簽到與獎勵稀有度。"}
   slug="level"
   locale="zh-hant"
 >
@@ -54,7 +57,7 @@ import DocsLayout from '../layouts/DocsLayout.astro';
       <thead><tr><th>稀有度</th><th>成長點數</th><th>典型加成</th></tr></thead>
       <tbody>
         <tr><td>⚪ 普通 Common</td><td>+30 💎</td><td>日常航行的標準補給</td></tr>
-        <tr><td>🔵 稀有 Rare</td><td>+40 💎</td><td>+1 張 Arena 抽獎機會等加成</td></tr>
+        <tr><td>🔵 稀有 Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "+1 張 Arena 抽獎機會等加成" : "+1 張抽獎機會等加成"}</td></tr>
         <tr><td>🟣 史詩 Epic</td><td>+60 💎</td><td>+2 張抽獎機會等加成</td></tr>
         <tr><td>🟡 傳說 Legendary</td><td>+100 💎</td><td>徽章、多重加成等稀有戰利品</td></tr>
       </tbody>
@@ -71,16 +74,20 @@ import DocsLayout from '../layouts/DocsLayout.astro';
       <li>更多點數消耗場景（兌換、商店、玩法門票等）將隨版圖擴展陸續開放。</li>
     </ul>
 
-    <h2>成長激勵池：Arena 的海流回饋</h2>
-    <blockquote>
-      <p>在 Arena 的每一輪競技中，平台都會保留一部分資金注入「成長激勵池」，專門用於獎勵在 Level 中持續成長的用戶。</p>
-    </blockquote>
-    <p>
-      這意味著：你在航海圖上的每一次堅持，不只是積攢點數 ——
-      整個平台的競技熱度都在為堅持者積蓄回饋。隨著你的等級提升與連續航行里程碑達成，
-      來自激勵池的獎勵（點數加成、Arena 戰魂門票、徽章等）會持續向你傾斜。
-      想了解資金從哪裡來？請閱讀<a href="/whitepaper/">白皮書</a>中的 Arena 經濟模型章節。
-    </p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>成長激勵池：Arena 的海流回饋</h2>
+      <blockquote>
+        <p>在 Arena 的每一輪競技中，平台都會保留一部分資金注入「成長激勵池」，專門用於獎勵在 Level 中持續成長的用戶。</p>
+      </blockquote>
+      <p>
+        這意味著：你在航海圖上的每一次堅持，不只是積攢點數 ——
+        整個平台的競技熱度都在為堅持者積蓄回饋。隨著你的等級提升與連續航行里程碑達成，
+        來自激勵池的獎勵（點數加成、Arena 戰魂門票、徽章等）會持續向你傾斜。
+        想了解資金從哪裡來？請閱讀<a href="/whitepaper/">白皮書</a>中的 Arena 經濟模型章節。
+      </p>
+      </Fragment>
+    )}
 
     <h2>與 Quest 的聯動</h2>
     <ul>

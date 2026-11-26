@@ -1,10 +1,13 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import { SHOW_ARENA } from '../../config';
 ---
 
 <DocsLayout
   title="Guide du Système Level"
-  description="Guide du système de progression LevelUp Land : carte de voyage, 8 îles, check-in quotidien, rareté des récompenses et Growth Incentive Pool."
+  description={SHOW_ARENA
+    ? "Guide du système de progression LevelUp Land : carte de voyage, 8 îles, check-in quotidien, rareté des récompenses et Growth Incentive Pool."
+    : "Guide du système de progression LevelUp Land : carte de voyage, 8 îles, check-in quotidien et rareté des récompenses."}
   slug="level"
   locale="fr"
 >
@@ -41,7 +44,7 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <thead><tr><th>Rareté</th><th>Growth Points</th><th>Bonus typique</th></tr></thead>
       <tbody>
         <tr><td>⚪ Common</td><td>+30 💎</td><td>Rations standards</td></tr>
-        <tr><td>🔵 Rare</td><td>+40 💎</td><td>Par exemple +1 chance de tirage Arena</td></tr>
+        <tr><td>🔵 Rare</td><td>+40 💎</td><td>{SHOW_ARENA ? "Par exemple +1 chance de tirage Arena" : "Par exemple +1 chance de tirage"}</td></tr>
         <tr><td>🟣 Epic</td><td>+60 💎</td><td>Par exemple +2 chances</td></tr>
         <tr><td>🟡 Legendary</td><td>+100 💎</td><td>Badges, bonus cumulés et récompenses rares</td></tr>
       </tbody>
@@ -54,9 +57,13 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
       <li>Échanges, boutique, tickets de jeu et autres usages seront ajoutés avec l’extension de la carte.</li>
     </ul>
 
-    <h2>Growth Incentive Pool</h2>
-    <blockquote><p>Une partie de la réserve de chaque manche Arena revient dans un pool dédié aux utilisateurs qui continuent de progresser dans Level.</p></blockquote>
-    <p>Votre assiduité peut donc débloquer boosts, tickets Battle Soul, badges et autres avantages. Le détail des flux est présenté dans le <a href="/fr/whitepaper/">livre blanc</a>.</p>
+    {SHOW_ARENA && (
+      <Fragment>
+      <h2>Growth Incentive Pool</h2>
+      <blockquote><p>Une partie de la réserve de chaque manche Arena revient dans un pool dédié aux utilisateurs qui continuent de progresser dans Level.</p></blockquote>
+      <p>Votre assiduité peut donc débloquer boosts, tickets Battle Soul, badges et autres avantages. Le détail des flux est présenté dans le <a href="/fr/whitepaper/">livre blanc</a>.</p>
+      </Fragment>
+    )}
 
     <h2>Lien avec Quest</h2>
     <ul>
